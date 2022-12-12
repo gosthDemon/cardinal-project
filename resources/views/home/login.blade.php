@@ -34,23 +34,46 @@
                     </div>
                     <div class="group-form">
                         <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+                        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña"
+                            required>
+                        <div class="row">
+                            <input type="checkbox" id="show_password" name="show_password" class="show-password"
+                                required> <label for="show_password">&nbsp; Ver contraseña</label>
+                        </div>
                     </div>
                     <div class="group-form">
                         <button class="login-button">Iniciar Sesión</button>
                     </div>
                     <div class="group-form">
-                        <a href="#" id="forgot_password" name="forgot_password">Olvidé mi contraseña</a>
+                        <a href="#" class="forgot-password" id="forgot_password" name="forgot_password">¿Ha
+                            olvidado su contraseña?</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="card-two">
-            
         </div>
-
-
     </section>
+    <script>
+        let show_password = document.getElementById('show_password');
+        let password = document.getElementById('password');
+
+        show_password.addEventListener('click', function() {
+            if (show_password.checked) {
+                if (password.type === 'password') {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            } else {
+                if (password.type === 'password') {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

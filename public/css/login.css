@@ -43,23 +43,6 @@ body{
     background-position: center;
     border-radius: 0px 10px 10px 0px;
 }
-@media screen and (max-width:760px){
-    .login-content-form{
-        width: 300px;
-        min-height: 350px;
-        background: red;
-        padding: 20px;
-        display: flex;
-    }
-    .card-one{
-        display: inline-block;
-        width: 100%;
-    }
-    .card-two{
-        display: none;
-    }
-}
-
 .login-content-form header .tittle-form .tittle-cardinal{
     display: flex;
     justify-content: center;
@@ -92,37 +75,62 @@ body{
 .login-content-form .body .group-form  input[type="password"]{
     width: 100%;
     display: block;
-    padding: 7px 0px 7px 0px;
+    padding: 7px 0px 7px 5px;
     margin: 0px 0px 5px 0px;
     display: block;
     border: none;
+    background: rgba(66, 66, 66, 0.107);
+    outline: none;
+    border-radius: 3px;
+    color: black;
+}
+.login-content-form .body .group-form .row{
+    display: flex;
+}
+.login-content-form .body .group-form .row input[type="checkbox"],
+.login-content-form .body .group-form .row label{
+    display: inline-flex;
 }
 .login-content-form .body .group-form .login-button{
     width: 100%;
-    padding: 7px 0px 7px 0px;
-    margin: 10px 0px 10px 0px;
-    background: blue;
+    padding: 4px 0px 4px 0px;
+    margin: 20px 0px 10px 0px;
+    color: #3585F9;
+    border-radius: 3px;
+    border: 2px solid #3585F9;
+    font-size: 16px;
+    transition: .3s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.login-content-form .body .group-form .login-button:hover{
+    background: #3585F9;
+    color: white;
+    border: 2px solid #3585F9;
+}
+.login-content-form .body .group-form .forgot-password{
+    color: #3585F9;
+    font-size: 14px;
+    text-decoration: none;
+}
+@media screen and (max-width:760px){
+    .login-content-form{
+        width: 350px;
+        min-height: 350px;
+        display: flex;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .card-one{
+        display: inline-block;
+        width: 100%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .card-two{
+        display: none;
+    }
+}
 @media screen and (max-width: 500px) {
     .login-content-form{
         width: 100%;
         margin: 5%;
         min-height: 350px;
-        background: red;
     }
 }
