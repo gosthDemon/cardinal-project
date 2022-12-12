@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+}
+.login-content-form{
+    width: 300px;
+    min-height: 350px;
+    background: red;
+    padding: 20px;
+}
+.login-content-form header .tittle-form .tittle-cardinal{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.login-content-form header .tittle-form .tittle-sistem{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.login-content-form header .logo-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-content-form header .logo-form img{
+    width: 100px;
+}
+.login-content-form .body .group-form{
+    display: block;
+}
+.login-content-form .body .group-form  label{
+    display: block;
+}
+.login-content-form .body .group-form  input[type="text"],
+.login-content-form .body .group-form  input[type="password"]{
+    width: 100%;
+    display: block;
+    padding: 7px 0px 7px 0px;
+    margin: 0px 0px 5px 0px;
+    display: block;
+    border: none;
+}
+.login-content-form .body .group-form .login-button{
+    width: 100%;
+    padding: 7px 0px 7px 0px;
+    margin: 10px 0px 10px 0px;
+    background: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    .login-content-form{
+        width: 100%;
+        margin: 5%;
+        min-height: 350px;
+        background: red;
+    }
+}

@@ -1,0 +1,7 @@
+1.-We will use snake_case for PHP, HTML, CSS and camelCase for JS.
+
+2.-In HTML, classes will be separated by a single-hyphen, while IDs and names will be separated by an underscore. 
+
+3.-The vars will be writing in english. if you don't know how to write it, google translate will be used.
+
+4.-For HTML, Class and IDs or Names will always be written first with the  the var name and after element tipe
