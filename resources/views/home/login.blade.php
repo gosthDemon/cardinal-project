@@ -16,7 +16,7 @@
     <section class="login-content-form">
         <header>
             <div class="tittle-form">
-                <h2 class="tittle-cardinal">Sistema Cárdinal</h2>
+                <h2 class="tittle-cardinal">Login</h2>
                 <h2 class="tittle-sistem">Registro de Seguimiento Académico</h2>
             </div>
             <div class="logo-form">
