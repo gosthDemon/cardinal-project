@@ -22,7 +22,7 @@
                 <a href="">Preview</a>
                 <a href="">About me</a>
                 <a href="">Sign Up</a>
-                <a href="">Login</a>
+                <a href="{{route('login')}}">Login</a>
             </div>
         </div>
         <div class="banner">
