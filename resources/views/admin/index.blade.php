@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/cardinal.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/fontawesome.css') }}">
 </head>
+
 <body>
     <div class="content-menu" id="content_menu">
         <div class="nav-bar">
@@ -21,18 +23,29 @@
             <div class="top-bar">
                 <i class="fad fa-bars" id="open_menu"></i>
                 <div class="content-search-input">
-                    <input type="text" class="search" id="search" placeholder="Search..."><button><i
-                            class="fas fa-search"></i></button>
+                    <input type="text" class="search" id="search" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="icons">
+                    <i class="fal fa-envelope"><div class="circle button" id="button-0"></div></i>
+                    
+                    <i class="fal fa-bell" ><div class="circle button" id="button-1"></div></i>
+                    <i class="fal fa-cog"></i>
+                    <a href="/login"><img src="{{URL::asset('img/cardinal/login/brain.webp')}}"width="35px" height="35px"; alt="">
+                    <span>Aldahir Ruiz Valdez</span></a>
                 </div>
             </div>
         </div>
         <div class="body">
             <div class="card">
                 <div class="card-header">Headers</div>
-                <div class="card-body">Body</div>
+                <div class="card-body">
+                    
+                </div>
             </div>
         </div>
     </div>
     <script src="{{ URL::asset('js/cardinal.js') }}"></script>
 </body>
+
 </html>

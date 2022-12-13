@@ -1,14 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --bg-color: rgba(78, 78, 78, 0.1);
+    --white:rgb(255, 255, 255);
+    --blue: rgb(67, 140, 248);
+    --gray: rgba(0, 0, 0, 0.6);
+    --red: rgba(212, 34, 34, 0.797);
+    --orange: rgb(255, 147, 74);
+    --purple:rgb(222, 83, 155);
+    --yellow:rgb(255, 238, 88);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 3px;
+}
 * {
     padding: 0;
     margin: 0;
 }
 body {
-    background: rgba(78, 78, 78, 0.091);
+    background: var(--bg-color);
     display: flex;
 }
 .content-menu {
     display: inline-flex;
-    background: white;
+    background: var(--white);
     width: 280px;
     height: 100vh;
     transition: 0.6s;
@@ -20,7 +50,7 @@ body {
 .content-body .content-top-bar {
     display: block;
     padding: 10px;
-    background: white;
+    background: var(--white);
     top: 0;
     width: 100%;
     background-image: url('../img/cardinal/top-bar.png');
@@ -28,47 +58,108 @@ body {
     background-size: 50%;
     background-repeat: no-repeat;
 }
-.content-body .top-bar {
+.content-body .content-top-bar .top-bar {
     display: flex;
 }
-.content-body #open_menu {
+.content-body .content-top-bar .top-bar #open_menu {
     display: inline-flex;
     font-size: 25px;
     cursor: pointer;
     padding: 2px;
+    color: var(--blue);
+    width: auto;
 }
-.content-body #open_menu {
-    display: inline-flex;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 2px;
-    color: #438cf8;
-}
-.content-body .content-search-input {
-    border: 1.5px solid #438cf8;
+.content-body .content-top-bar .top-bar .content-search-input {
+    border: 1.5px solid var(--blue);
     margin-left: 20px;
     border-radius: 5px;
+    background: var(--white);
+    width: 35%;
+    position: relative;
 }
-.content-body .search {
+.content-body .content-top-bar .top-bar .content-search-input .search {
     padding: 2px 0 2px 10px;
     border: none;
-    background: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.566);
+    background: var(--white);
+    color: var(--gray);
+    width: 80%;
     outline: none;
     border-radius: 5px 0 0 5px;
+    
 }
-.content-body button {
+.content-body .content-top-bar .top-bar .content-search-input button{
     border: none;
-    background: rgb(255, 255, 255);
+    background: var(--white);
     padding: 2px 5px;
     border-radius: 0 5px 5px 0;
-    color: rgb(84, 84, 84);
+    color: var(--gray);
+    position: absolute;
+    right: 0px;
+}
+.content-body .content-top-bar .top-bar .icons{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right:20px;
+    color: rgba(48, 132, 222, 0.934);
+}
+.content-body .content-top-bar .top-bar .icons i{
+    padding: 5px 10px 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+/*EFECTO DE PULSO*/
+.circle {
+    width: 7px;
+    height: 7px;
+    background: var(--red);
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+}
+
+.circle::before, .circle::after {
+    content:"";
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    border: 10px solid var(--orange);
+    border-radius:100%;
+    animation: latido linear 3s infinite;
+}
+
+.circle::after {
+    animation-delay: -1.5s;
+}
+
+@keyframes latido {
+    0% { width:7px; height:7px; border:3px solid var(--orange); }
+    100% { width:20px; height:20px; border:5px solid transparent; }
+}
+#button-0 { top: 5px; left: 30px; }
+#button-1 { top: 5px; left: 25px; }
+
+/*END EFECTO PULSO*/
+.content-body .content-top-bar .top-bar .icons a{
+    text-decoration: none;
+    color: rgba(48, 132, 222, 0.856);
+}
+.content-body .content-top-bar .top-bar .icons img{
+    margin-right: 7px;
+    font-size: 20px;
+    border-radius: 100%;
+    border: 2px solid var(--blue);
 }
 #prueba {
     width: 225px;
 }
 .close-menu {
-    width: 0;
+    width: 50px;
     transition: 0.6s;
 }
 .body {
