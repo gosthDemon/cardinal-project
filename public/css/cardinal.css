@@ -1,45 +1,80 @@
-*{
-    padding: 0px;
-    margin: 0px 0px 0px 0px;
+* {
+    padding: 0;
+    margin: 0;
 }
-body{
-    background: blue;
+body {
+    background: rgba(78, 78, 78, 0.091);
     display: flex;
 }
-.content-menu{
+.content-menu {
     display: inline-flex;
     background: white;
     width: 280px;
     height: 100vh;
-    transition: .6s;
+    transition: 0.6s;
 }
-.content-body{
-    display: inline-flex;
+.content-body {
     width: 100%;
-    height: 60px;
-    background: white;
-    align-items: center;
-    padding: 0px 20px 0px 10px;
+    height: 100vh;
 }
-.content-body .top-bar{
+.content-body .content-top-bar {
+    display: block;
+    padding: 10px;
+    background: white;
+    top: 0;
+    width: 100%;
+    background-image: url('../img/cardinal/top-bar.png');
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+.content-body .top-bar {
     display: flex;
 }
-.content-body #open_menu{
+.content-body #open_menu {
     display: inline-flex;
     font-size: 25px;
     cursor: pointer;
     padding: 2px;
 }
-.content-body #open_menu{
+.content-body #open_menu {
     display: inline-flex;
     font-size: 25px;
     cursor: pointer;
     padding: 2px;
+    color: #438cf8;
 }
-.content-body .search{
-    margin: 0px 10px 0px 20px;
+.content-body .content-search-input {
+    border: 1.5px solid #438cf8;
+    margin-left: 20px;
+    border-radius: 5px;
 }
-.close-menu{
-    width: 0px;
-    transition: .6s;
+.content-body .search {
+    padding: 2px 0 2px 10px;
+    border: none;
+    background: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.566);
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+.content-body button {
+    border: none;
+    background: rgb(255, 255, 255);
+    padding: 2px 5px;
+    border-radius: 0 5px 5px 0;
+    color: rgb(84, 84, 84);
+}
+#prueba {
+    width: 225px;
+}
+.close-menu {
+    width: 0;
+    transition: 0.6s;
+}
+.body {
+    width: 100%;
+}
+.card {
+    margin: 10px;
+    height: 600px;
 }

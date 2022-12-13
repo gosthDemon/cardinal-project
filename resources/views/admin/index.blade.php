@@ -13,21 +13,26 @@
 <body>
     <div class="content-menu" id="content_menu">
         <div class="nav-bar">
-
+            asdf
         </div>
     </div>
     <div class="content-body">
-        <div class="top-bar">
-            <div>
+        <div class="content-top-bar">
+            <div class="top-bar">
                 <i class="fad fa-bars" id="open_menu"></i>
+                <div class="content-search-input">
+                    <input type="text" class="search" id="search" placeholder="Search..."><button><i
+                            class="fas fa-search"></i></button>
+                </div>
             </div>
-            <div>
-                <input type="text" class="search" id="search" placeholder="Search...">
+        </div>
+        <div class="body">
+            <div class="card">
+                <div class="card-header">Headers</div>
+                <div class="card-body">Body</div>
             </div>
         </div>
     </div>
-
     <script src="{{ URL::asset('js/cardinal.js') }}"></script>
 </body>
-
 </html>
