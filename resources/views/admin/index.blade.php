@@ -27,10 +27,10 @@
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="icons">
-                    <i class="fal fa-envelope"><div class="circle button" id="button-0"></div></i>
+                    <i class="fad fa-envelope" id="message_icon"><div class="circle button" id="button-0"></div></i>
                     
-                    <i class="fal fa-bell" ><div class="circle button" id="button-1"></div></i>
-                    <i class="fal fa-cog"></i>
+                    <i class="fad fa-bell" id="notification_icon" ><div class="circle button" id="button-1"></div></i>
+                    <i class="fad fa-cog" id="config_icon"></i>
                     <a href="/login"><img src="{{URL::asset('img/cardinal/login/brain.webp')}}"width="35px" height="35px"; alt="">
                     <span>Aldahir Ruiz Valdez</span></a>
                 </div>
