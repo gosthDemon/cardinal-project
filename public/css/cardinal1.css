@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --bg-color: rgba(78, 78, 78, 0.1);
+    --white:rgb(255, 255, 255);
+    --blue: rgb(67, 140, 248);
+    --gray: rgba(0, 0, 0, 0.6);
+    --red: rgba(212, 34, 34, 0.797);
+    --orange: rgb(255, 147, 74);
+    --purple:rgb(222, 83, 155);
+    --yellow:rgb(255, 238, 88);
+    --green: rgb(94, 208, 175);
+    --black:rgba(42, 42, 42, 0.913);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 3px;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: var(--bg-color);
+    display: flex;
+}
+.content-menu {
+    display: inline-flex;
+    background: rgba(255, 0, 0, 0.244);
+    width: 280px;
+    height: 100vh;
+    transition: 0.6s;
+}
+.close-menu{
+    width: 50px;
+    transition: 0.6s;
+}
+.content-body {
+    width: 100%;
+    height: 100vh;
+    display: inline-flex;
+    transition: 0.6s;
+    background: blue;
+}
+.content-body .body{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.content-body .body .header{
+    background: white;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/cardinal/top-bar.png');
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;   
+    z-index: 10000;
+    padding: 5px;
+    width: 100%;
+}
+.content-body .body .header .top-bar-web{
+    display: block;
+    position: relative;
+}
+#open_menu, #open_menu_mobile{
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    color: var(--blue);
+    width: auto;
+}
+.content-body .body .header .top-bar-web .content-search-input{
+    border: 1.5px solid var(--blue);
+    margin-left: 20px;
+    border-radius: 5px;
+    background: var(--white);
+    width: 35%;
+    position: relative;
+}
+.content-body .body .header .top-bar-web .content-search-input .search{
+    padding: 2px 0 2px 10px;
+    border: none;
+    background: var(--white);
+    color: var(--gray);
+    width: 80%;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+.content-body .body .header .top-bar-web .content-search-input button{
+    border: none;
+    background: var(--white);
+    padding: 2px 5px;
+    border-radius: 0 5px 5px 0;
+    color: var(--gray);
+    position: absolute;
+    right: 0px;
+}
+.content-body .body .header .top-bar-web .icons{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right:20px;
+    color: rgba(48, 132, 222, 0.934);
+}
+.content-body .body .header .top-bar-web .icons{
+    padding: 5px 10px 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.content-body .body .workspace{
+    background: red;
+    width: 100%;
+    padding: 1%;
+    margin-top: 50px;
+    height: 1500px;
+}
+
+
+
+#mobile_menu{
+    display: none;
+}

@@ -62,3 +62,10 @@ closeMenuMobile.addEventListener('click',function(e){
     bodyMenuMobile.style.opacity = ".1  ";
     mobileMenu.style.transition = ".5s";
 });
+let topBar = document.getElementById('top_bar');
+window.addEventListener('scroll',function(){
+    if(window.scrollY > 0){
+        topBar.style.position = "fixed";
+        topBar.style.zIndex = "100";
+    }
+});
