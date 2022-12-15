@@ -2,17 +2,21 @@
 let openMenu = document.getElementById('open_menu');
 let contentMenu = document.getElementById('content_menu');
 
-let icons_top_bar = document.querySelectorAll('.icon-top-bar');
+let iconsTopBar = document.querySelectorAll('.icon-top-bar');
 
-let top_bar_web = document.getElementById('top_bar_web');
-let top_bar_mobile = document.getElementById('top_bar_mobile');
+let topBarWeb = document.getElementById('top_bar_web');
+let topBarMobile = document.getElementById('top_bar_mobile');
 
+let closeMenuMobile = document.getElementById('close_menu_mobile');
+let openMenuMobile = document.getElementById('open_menu_mobile');
+let mobileMenu = document.getElementById('mobile_menu');
+let bodyMenuMobile = document.getElementById('body_menu_mobile');
 //Functions
 openMenu.addEventListener('click',function(e) {
     contentMenu.classList.toggle('close-menu');
 });
 window.addEventListener("resize", function(){
-    icons_top_bar.forEach(icon => {
+    iconsTopBar.forEach(icon => {
         if( window.innerWidth <= 1000){
             if(icon.classList.contains('fad')){
                 icon.classList.remove('fad');
@@ -35,13 +39,25 @@ window.addEventListener("resize", function(){
 window.onload = showMenu();
 function showMenu(){
     if( window.innerWidth <= 600){
-        top_bar_web.style.display = "none";
-        top_bar_mobile.style.display = "flex";
+        topBarWeb.style.display = "none";
+        topBarMobile.style.display = "flex";
         contentMenu.style.display = "none";
         // this.alert('asdfas');
     }else{
-        top_bar_web.style.display = "flex";
+        topBarWeb.style.display = "flex";
         contentMenu.style.display = "flex";
-        top_bar_mobile.style.display = "none";
+        topBarMobile.style.display = "none";
     }
 }
+
+openMenuMobile.addEventListener('click',function(e){
+    mobileMenu.style.width = "100%";
+    bodyMenuMobile.style.opacity = "1";
+    mobileMenu.style.transition = ".5s";
+});
+closeMenuMobile.addEventListener('click',function(e){
+    mobileMenu.style.width = "0px";
+    bodyMenuMobile.style.opacity = ".1  ";
+    mobileMenu.style.transition = ".5s";
+    
+});

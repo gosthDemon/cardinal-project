@@ -19,12 +19,26 @@
 </head>
 
 <body>
+    <div class="mobile-menu" id="mobile_menu">
+        <header>
+            <i class="fal fa-times" id="close_menu_mobile"></i>
+        </header>
+        <div class="body-mobile-menu" id="body_menu_mobile">
+            <ul>
+                <li><a href="#" class="home-icon"><i class="fal fa-home"></i> Home</a></li>
+                <li><a href="#" class="school-icon"><i class="fal fa-school "></i> Mis Cursos</a></li>
+                <li><a href="#" class="calendar-icon"><i class="fal fa-calendar"></i> Calendario</a></li>
+                <li><a href="#" class="users-icon"><i class="fal fa-users"></i> Usuarios</a></li>
+                <li><a href="#" class="folder-icon"><i class="fal fa-folder"></i> Reportes</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="content-menu" id="content_menu">
         <div class="nav-bar">
-            asdf
         </div>
     </div>
     <div class="content-body">
+        
         <div class="content-top-bar">
             <div class="top-bar" id="top_bar_web">
                 <i class="fad fa-bars" id="open_menu"></i>
@@ -42,12 +56,13 @@
                 </div>
             </div>
             <div class="top-bar-mobile top-bar" id="top_bar_mobile">
-                <i class="fad fa-bars" id="open_menu"></i>
+                <i class="fad fa-bars" id="open_menu_mobile"></i>
                 <div class="icons " >
                     <a href="/login"><img src="{{URL::asset('img/cardinal/login/brain.webp')}}"width="35px" height="35px"; alt=""></a>
                 </div>
             </div>
         </div>
+        
         <div class="body">
             <div class="card">
                 <div class="card-header">Headers</div>
