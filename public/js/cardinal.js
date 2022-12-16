@@ -1,64 +1,88 @@
-//Variables
-let openMenu = document.getElementById('open_menu');
-let contentMenu = document.getElementById('content_menu');
 
-let iconsTopBar = document.querySelectorAll('.icon-top-bar');
+let button_open_menu = document.querySelectorAll('.list__img');
 
-let topBarWeb = document.getElementById('top_bar_web');
-let topBarMobile = document.getElementById('top_bar_mobile');
-let contentBody = document.getElementById('content_body');
-
-let closeMenuMobile = document.getElementById('close_menu_mobile');
-let openMenuMobile = document.getElementById('open_menu_mobile');
-let mobileMenu = document.getElementById('mobile_menu');
-let bodyMenuMobile = document.getElementById('body_menu_mobile');
-//Functions
-openMenu.addEventListener('click',function(e) {
-    contentMenu.classList.toggle('close-menu');
+button_open_menu.forEach(button => {
+    button.addEventListener('click', ()=>{
+        let menu = document.getElementById('menu_lateral');
+        if(menu.classList.contains('ocultar-menu')){
+            open_menu();
+        }
+    })
 });
-//Eventos Resize
-window.addEventListener("resize", function(){
-    iconsTopBar.forEach(icon => {
-        if( window.innerWidth <= 1000){
-            if(icon.classList.contains('fad')){
-                icon.classList.remove('fad');
-                icon.classList.add('fas');
-            }
+
+let open_menu_buttons = document.querySelectorAll('.open_menu_close');
+
+open_menu_buttons.forEach(open_menu_button => {
+    open_menu_button.addEventListener('click',()=>{
+        if(screen.width < 768 || window.screen.width < 768){
+            let menu = document.getElementById('menu_mobile');
+            menu.classList.toggle('open-menu-mobile');
         }else{
-            if(icon.classList.contains('fas')){
-                icon.classList.remove('fas');
-                icon.classList.add('fad');
-            }
+            let menu = document.getElementById('menu_lateral');
+            let body = document.getElementById('container_body');
+            let iconos = document.querySelectorAll('.list__img');
+            let arrows = document.querySelectorAll('.list__arrow');
+            let logoBig = document.getElementById('img_logo');
+            let logoSmall = document.getElementById('img_logo_small');
+    
+            
+            menu.classList.toggle('ocultar-menu');
+            body.classList.toggle('agrandar-body');
+            logoBig.classList.toggle('ocultar-logo');
+            logoSmall.classList.toggle('aparecer-logo-small');
+            iconos.forEach(icon => {
+                icon.classList.toggle('static-icon');
+            });
+            arrows.forEach(arrow => {
+                arrow.classList.toggle('delete_arrow');
+            });
         }
     });
-    if( window.innerWidth <= 768){
-        contentMenu.classList.add('close-menu');
-        content_body.classList.add('expand-body');
-    }else{
-        contentMenu.classList.remove('close-menu');
-    }
-    showMenu();
+})
+
+let listElements = document.querySelectorAll('.list__button--click');
+
+listElements.forEach(listElement => {
+    listElement.addEventListener('click', ()=>{
+        
+        listElement.classList.toggle('arrow');
+
+        let height = 0;
+        let menu = listElement.nextElementSibling;
+        if(menu.clientHeight == "0"){
+            height=menu.scrollHeight;
+        }
+
+        menu.style.height = `${height}px`;
+
+    })
 });
-//Eventos del menu
-window.onload = showMenu();
-function showMenu(){
-    if( window.innerWidth <= 600){
-        topBarWeb.style.display = "none";
-        topBarMobile.style.display = "flex";
-        contentMenu.style.display = "none";
-    }else{
-        topBarWeb.style.display = "flex";
-        contentMenu.style.display = "flex";
-        topBarMobile.style.display = "none";
-    }
+
+window.onload = function(){
+    let icons = document.querySelectorAll(".icon-next");
+
+    icons.forEach(icon => {
+        var iconClass = icon.classList;
+        var padre = icon.parentNode;
+        switch( true ){
+            case iconClass.contains('bg-red'):
+                padre.style.setProperty('--icon-pulse', '#ffabab')
+                break;
+            case iconClass.contains('bg-blue'):
+                padre.style.setProperty('--icon-pulse', '#ACE7FF')
+                break;
+            case iconClass.contains('bg-green'):
+                padre.style.setProperty('--icon-pulse', '#AFF8DB')
+                break;
+            case iconClass.contains('bg-yellow'):
+                padre.style.setProperty('--icon-pulse', '#FFF5BA')
+                break;
+            case iconClass.contains('bg-lilac'):
+                padre.style.setProperty('--icon-pulse', '#F6A6FF')
+                break;
+            case iconClass.contains('bg-violet'):
+                padre.style.setProperty('--icon-pulse', '#B28DFF')
+                break;
+        }
+    })
 }
-openMenuMobile.addEventListener('click',function(e){
-    mobileMenu.style.width = "100%";
-    bodyMenuMobile.style.opacity = "1";
-    mobileMenu.style.transition = ".5s";
-});
-closeMenuMobile.addEventListener('click',function(e){
-    mobileMenu.style.width = "0px";
-    bodyMenuMobile.style.opacity = ".1  ";
-    mobileMenu.style.transition = ".5s";
-});

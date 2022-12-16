@@ -33,7 +33,7 @@
             </ul>
         </div>
     </div>
-    <div class="content-menu" id="content_menu">
+    {{-- <div class="content-menu" id="content_menu">
         <div class="nav-bar">
         </div>
     </div>
@@ -51,7 +51,7 @@
                         
                         <i class="fad fa-bell icon-top-bar" id="notification_icon" ><div class="circle button" id="button-1"></div></i>
                         <i class="fad fa-cog icon-top-bar" id="config_icon"></i>
-                        <a href="/login"><img src="{{URL::asset('img/cardinal/login/brain.webp')}}"width="35px" height="35px"; alt="">
+                        <a href="/login"><img src="{{URL::asset('img/cardinal/login/brain.webp')}}" width="35px" height="35px"; alt="">
                         <span>Aldahir Ruiz Valdez</span></a>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <script src="{{ URL::asset('js/cardinal1.js') }}"></script>
 </body>
 
