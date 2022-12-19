@@ -1,5 +1,16 @@
 
+
+//Vars
 let button_open_menu = document.querySelectorAll('.list__img');
+let open_menu_buttons = document.querySelectorAll('.open_menu_close');
+let menu_web = document.getElementById('menu_lateral');
+let body = document.getElementById('container_body');
+let iconos = document.querySelectorAll('.list__img');
+let arrows = document.querySelectorAll('.list__arrow');
+let logoBig = document.getElementById('img_logo');
+let logoSmall = document.getElementById('img_logo_small');
+
+let containListSecondary = document.querySelectorAll('.contain-list-secondary');
 
 button_open_menu.forEach(button => {
     button.addEventListener('click', ()=>{
@@ -10,26 +21,18 @@ button_open_menu.forEach(button => {
     })
 });
 
-let open_menu_buttons = document.querySelectorAll('.open_menu_close');
-
 open_menu_buttons.forEach(open_menu_button => {
     open_menu_button.addEventListener('click',()=>{
-        if(screen.width < 768 || window.screen.width < 768){
-            let menu = document.getElementById('menu_mobile');
-            menu.classList.toggle('open-menu-mobile');
+        // alert('sdfsd');
+        if(window.innerWidth < 768 || window.screen.width < 768){
+            let menu_mobile = document.getElementById('menu_mobile');
+            menu_mobile.classList.toggle('open-menu-mobile');
         }else{
-            let menu = document.getElementById('menu_lateral');
-            let body = document.getElementById('container_body');
-            let iconos = document.querySelectorAll('.list__img');
-            let arrows = document.querySelectorAll('.list__arrow');
-            let logoBig = document.getElementById('img_logo');
-            let logoSmall = document.getElementById('img_logo_small');
-    
-            
-            menu.classList.toggle('ocultar-menu');
+            menu_web.classList.toggle('ocultar-menu');
             body.classList.toggle('agrandar-body');
             logoBig.classList.toggle('ocultar-logo');
             logoSmall.classList.toggle('aparecer-logo-small');
+
             iconos.forEach(icon => {
                 icon.classList.toggle('static-icon');
             });
@@ -40,23 +43,23 @@ open_menu_buttons.forEach(open_menu_button => {
     });
 })
 
-let listElements = document.querySelectorAll('.list__button--click');
-
-listElements.forEach(listElement => {
-    listElement.addEventListener('click', ()=>{
-        
-        listElement.classList.toggle('arrow');
-
-        let height = 0;
-        let menu = listElement.nextElementSibling;
-        if(menu.clientHeight == "0"){
-            height=menu.scrollHeight;
-        }
-
-        menu.style.height = `${height}px`;
-
+containListSecondary.forEach(openSecondaryList => {
+    openSecondaryList.addEventListener('click',()=>{
+        let listSecondary = $(openSecondaryList).next('.content-secondary-item').toggleClass('open-secondary-list');
     })
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 window.onload = function(){
     let icons = document.querySelectorAll(".icon-next");

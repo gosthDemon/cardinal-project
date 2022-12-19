@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;;
+namespace App\Http\Controllers;
+use App\Http\Controllers\AdministradorController;
 
 use Illuminate\Http\Request;
 
@@ -11,5 +12,8 @@ class HomeController extends Controller
     }
     public function login(){
         return view('home.login');
+
+        $admin = new AdministradorController;
     }
+
 }
