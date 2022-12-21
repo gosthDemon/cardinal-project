@@ -15,7 +15,7 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('role');
+            $table->string('role')->comment('Los roles permitidos son: SuperAdmin (Yo), Administradores, Docentes, Tutores y Estudiantes');
             $table->timestamps();
         });
     }

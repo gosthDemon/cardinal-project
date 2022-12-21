@@ -22,7 +22,7 @@ class CreateCalificacionesTable extends Migration
             $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');
             $table->unsignedBigInteger('curso_id');
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
-            $table->string('concepto');
+            $table->string('concepto')->comment('Refiere del motivo de ese casillero.');
             $table->string('trimestre');
             $table->timestamps();
         });
