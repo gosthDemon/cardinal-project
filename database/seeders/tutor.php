@@ -21,7 +21,7 @@ class tutor extends Seeder
             'email' => 'tutor_1@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 6,
+            'role_id' => 6,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -50,7 +50,7 @@ class tutor extends Seeder
             'email' => 'tutor_2@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 6,
+            'role_id' => 6,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -79,7 +79,7 @@ class tutor extends Seeder
             'email' => 'tutor_3@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 6,
+            'role_id' => 6,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -21,7 +21,7 @@ class docente extends Seeder
             'email' => 'docente_1@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 5,
+            'role_id' => 5,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -52,7 +52,7 @@ class docente extends Seeder
             'email' => 'docente_2@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 5,
+            'role_id' => 5,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

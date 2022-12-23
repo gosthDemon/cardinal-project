@@ -21,7 +21,7 @@ class administrador extends Seeder
             'email' => 'super_admin@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 1,
+            'role_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -51,7 +51,7 @@ class administrador extends Seeder
             'email' => 'admin@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 2,
+            'role_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -81,7 +81,7 @@ class administrador extends Seeder
             'email' => 'director@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 3,
+            'role_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -111,7 +111,7 @@ class administrador extends Seeder
             'email' => 'secretaria@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 4,
+            'role_id' => 4,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

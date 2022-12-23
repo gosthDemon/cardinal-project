@@ -5,3 +5,11 @@
 3.-The vars will be writing in english. if you don't know how to write it, google translate will be used.
 
 4.-For HTML, Class and IDs or Names will always be written first with the  the var name and after element tipe
+
+
+
+require...
+{
+
+// "laravel/framework": "^8.75",
+}

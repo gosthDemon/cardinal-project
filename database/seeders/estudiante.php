@@ -20,7 +20,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_1@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -50,7 +50,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_2@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -81,7 +81,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_3@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -112,7 +112,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_4@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -143,7 +143,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_5@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -173,7 +173,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_6@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -204,7 +204,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_7@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -235,7 +235,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_8@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -266,7 +266,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_9@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -297,7 +297,7 @@ class estudiante extends Seeder
             'email' => 'estudiante_10@cardinal.com',
             'email_verified_at' => now(),
             'password' => Hash::make('00000000'),
-            'role' => 7,
+            'role_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
