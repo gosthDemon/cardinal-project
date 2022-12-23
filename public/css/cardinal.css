@@ -61,6 +61,7 @@ html,body{
     width: 100%;
     display: flex;
     background: var(--smoke);
+    font-family: 'Nunito',sans-serif !important;
 }
 .menu-lateral{
     width: 270px;
@@ -110,8 +111,8 @@ html,body{
 }
 .logo-container #img_logo{
     width: 100%;
-    background-image: url("../img/moonlight/Moonlight-Have-less\,-do-more\,-be-more.png");
-    background-size:100%;
+    background-image: url("../img/cardinal/LogoSample_ByTailorBrands.png");
+    background-size:70%;
     background-position: center;
     background-repeat: no-repeat;
 }

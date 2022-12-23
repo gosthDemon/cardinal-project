@@ -1,5 +1,3 @@
-
-
 //Vars
 let button_open_menu = document.querySelectorAll('.list__img');
 let open_menu_buttons = document.querySelectorAll('.open_menu_close');
@@ -48,18 +46,6 @@ containListSecondary.forEach(openSecondaryList => {
         let listSecondary = $(openSecondaryList).next('.content-secondary-item').toggleClass('open-secondary-list');
     })
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.onload = function(){
     let icons = document.querySelectorAll(".icon-next");

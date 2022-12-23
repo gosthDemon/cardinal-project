@@ -83,36 +83,7 @@
         </div>
         <div class="body">
             <div class="content">
-                <div class="frontPage-header">
-                    <div class="tittle">
-                        <h1>Dashboard</h1>
-                        <ul>
-                            <li>Cardinal &nbsp;></li>
-                            <li>Docente &nbsp;></li>
-                            <li>Mis Cursos </li>
-                        </ul>
-                    </div>
-                    <div class="button">
-                        <a href="#" class="button-report">Create Report</a>
-                    </div>
-                </div>
-                <div class="frontPage-body card">
-                    <div class="card-header">
-                        afsd
-                    </div>
-                    dfgasdf <br>
-                    sdfasd
-                    bsdf as <br>
-                    d fsd <br>
-                    dsfad <br> <br> <br>
-                    sfa <br>
-                    sdf <br> <br>
-                    asdf
-                    asdf
-                    <div class="card-footer">
-                        afsd
-                    </div>
-                </div>
+                @yield('content-body')
             </div>
         </div>
 
@@ -123,26 +94,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
+    @yield('script')
 </body>
-
 </html>
-
-
-<div class="class_one">
-    <div class="class_two"></div>
-</div>
-<div class="class_one">
-    <div class="class_four"></div>
-    <div class="class_two"></div>
-</div>
-<div class="class_one">
-    <div class="class_six"></div>
-    <div class="class_two"></div>
-</div>
-<div class="class_one">
-    <div class="class_five"></div>
-    <div class="class_two"></div>
-</div>
-<div class="class_one">
-    <div class="class_two"></div>
-</div>
