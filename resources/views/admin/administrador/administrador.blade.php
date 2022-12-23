@@ -4,7 +4,6 @@
 @section('content-body')
 
 <div>
-    sdfs
     @livewire('administrador.administrador')
 </div>
 

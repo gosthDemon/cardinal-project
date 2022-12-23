@@ -11,7 +11,7 @@ class administrador extends Seeder
     /**
      * Run the database seeds.
      *
-     * @return void
+     * * @return void
      */
     public function run()
     {
@@ -123,7 +123,7 @@ class administrador extends Seeder
             'apellido_materno' => 'Medinaccelli',
             'carnet' => '12345672',
             'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'M',
+            'sexo' => 'F',
             'direccion' => '123 Main Street',
             'telefono' => '123-456-7890',
             'created_at' => now(),
