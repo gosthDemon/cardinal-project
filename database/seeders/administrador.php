@@ -121,7 +121,7 @@ class administrador extends Seeder
             'nombres' => 'Moira',
             'apellido_paterno' => 'Sankut',
             'apellido_materno' => 'Medinaccelli',
-            'carnet' => '12345672',
+            'carnet' => '12345673',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',

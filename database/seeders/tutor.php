@@ -59,7 +59,7 @@ class tutor extends Seeder
             'fotografia' => '',
             'nombres' => 'Tutor',
             'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Uno',
+            'apellido_materno' => 'Dos',
             'carnet' => '12345678',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
@@ -70,6 +70,35 @@ class tutor extends Seeder
         ]);
         DB::table('tutores')->insert([
             'persona_id' => $persona_tutor_id_2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        //TUTOR 2
+        $tutor_id_3 = DB::table('users')->insertGetId([
+            'name' => 'Tutor 3',
+            'email' => 'tutor_3@cardinal.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('00000000'),
+            'role' => 6,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $persona_tutor_id_3 = DB::table('personas')->insertGetId([
+            'user_id' => $tutor_id_3,
+            'fotografia' => '',
+            'nombres' => 'Tutor',
+            'apellido_paterno' => 'Nro',
+            'apellido_materno' => 'Tres',
+            'carnet' => '12345679',
+            'fecha_nacimiento' => '2000-01-01',
+            'sexo' => 'F',
+            'direccion' => '123 Main Street',
+            'telefono' => '123-456-7890',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('tutores')->insert([
+            'persona_id' => $persona_tutor_id_3,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
