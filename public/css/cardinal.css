@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 :root{
-    --primary:#488B8F;
-    --secondary:rgb(100, 197, 177);
-    --tertiary:#ADD2C9;
-    --blank:#FAF9F9;
-    --white:#ffffff;
-    --gray:#3d3d3d;
-    --orange:#ffa945;
+    --primary:rgb(72, 139, 143) !important;
+    --secondary:rgb(100, 197, 177) !important;
+    --tertiary:rgb(173, 210, 200) !important;
+    --blank:rgb(250, 249, 249);
+    --white:rgb(255, 255, 255);
+    --gray:rgb(61, 61, 61);
+    --orange:rgb(255, 169, 69);
+    --green:rgba(47, 195, 106, 0.885);
     --smoke: rgb(241, 243, 243);
     --blue:rgb(86, 122, 237);
     --skyblue:rgba(0, 123, 255, 0.727);
-    --signature-red: #ffabab;
-    --signature-blue: #ACE7FF;
-    --signature-green: #AFF8DB;
-    --signature-yellow: #FFF5BA;
-    --signature-lilac: #F6A6FF;
-    --signature-violet: #B28DFF;
+    --signature-red: rgb(255, 171, 171);
+    --signature-blue: rgb(172, 231, 255);
+    --signature-green: rgb(175, 248, 219);
+    --signature-yellow: rgb(255, 245, 186);
+    --signature-lilac: rgb(246, 166, 255);
+    --signature-violet: rgb(178, 141, 255);
 }
 /* width */
 ::-webkit-scrollbar {
@@ -575,3 +576,80 @@ html,body{
     }
 }
 
+/*CONTENT*/
+/* TABLE */
+table{
+    min-width: 100%;
+    background: white;
+    border-collapse:collapse
+    ; border: none;
+
+}
+thead{
+    font-size: 18px;
+    font-family: 'Nunito',sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+}
+thead tr th, tbody tr td{
+    padding: 7px 20px 7px 0px;
+}
+thead tr th{
+    font-weight: 400;
+}
+tbody{
+    font-size: 16px;
+    font-family: 'Nunito',sans-serif;
+    text-align: left;
+}
+
+tbody tr:hover{
+    background: rgba(84, 84, 84, .1);
+    cursor: pointer;
+    
+}
+tbody tr td{
+    font-weight: 300;
+    border: 0px;
+    margin: none;
+} 
+tbody tr td::first-letter{
+    
+    text-transform: uppercase;
+}
+.actions-content{
+    display: flex;
+    width: 150px;
+}
+.large{
+    max-width: 250px !important;
+}
+.button{
+    margin: 0px 5px 0px 5px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.edit-btn{
+    background: var(--blue);
+    padding: 2px 10px 2px 10px;
+}
+.delete-btn{
+    background: var(--red);
+    padding: 2px 10px 2px 10px;
+}
+.show-btn{
+    background: var(--green);
+    padding: 2px 10px 2px 10px;
+}
+/* END TABLE */
+/* FORM */
+.modal-body .form-group{
+    margin: 0px;
+}
+.modal-body label{
+    margin: 5px 0px 0px 0px;
+
+}
+
+/* END FORM */
