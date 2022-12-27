@@ -33,7 +33,7 @@
                     @endphp
                     @foreach ($admins as $admin)
                         <tr>
-                            <th>{{ $counter }}</th>
+                            <td>{{ $counter }}</td>
                             <td>{{ $admin->nombres . ' ' . $admin->apellido_paterno . ' ' . $admin->apellido_materno }}</td>
                             <td>{{ $admin->carnet }}</td>
                             <td>{{ $admin->fecha_nacimiento }}</td>

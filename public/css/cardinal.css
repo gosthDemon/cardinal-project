@@ -574,4 +574,21 @@ html,body{
         height: 100%;
     }
 }
-
+/* BODY */
+/* TABLE */
+table{
+    font-family: 'Nunito',sans-serif;
+    text-align: left;
+}
+table tr th{
+    font-weight: 400;
+}
+table tbody tr{
+}
+table tr td{
+    padding: 3px 5px 3px 5px !important;
+    font-weight: 300;
+    vertical-align: bottom !important;
+}
+/* END TABLE */
+/* END BODY */
