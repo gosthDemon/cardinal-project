@@ -596,6 +596,13 @@ thead tr th, tbody tr td{
 }
 thead tr th{
     font-weight: 400;
+    cursor: pointer;
+}
+
+thead tr th i{
+    font-size: 12px;
+    float: right;
+    margin-top: 5px;
 }
 tbody{
     font-size: 16px;

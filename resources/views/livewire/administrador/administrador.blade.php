@@ -18,12 +18,73 @@
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Nombre</th>
-                        <th>Carnet</th>
-                        <th>Nacimiento</th>
-                        <th class="large">Dirección</th>
-                        <th>Teléfono</th>
+                        <th style="cursor: pointer" wire:click="order('id')">#
+                            @if ($sort == 'id')
+                                @if ($direction == 'asc')
+                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                                @else
+                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                @endif
+                            @else
+                                <i class="fal fa-sort"> </i>
+                            @endif
+                        </th>
+                        <th wire:click="order('nombres')">
+                            Nombre
+                            @if ($sort == 'nombres')
+                                @if ($direction == 'asc')
+                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                                @else
+                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                @endif
+                            @else
+                                <i class="fal fa-sort"> </i>
+                            @endif
+                        </th>
+                        <th wire:click="order('carnet')">Carnet
+                            @if ($sort == 'carnet')
+                                @if ($direction == 'asc')
+                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                                @else
+                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                @endif
+                            @else
+                                <i class="fal fa-sort"> </i>
+                            @endif
+                        </th>
+                        <th wire:click="order('fecha_nacimiento')">Nacimiento
+                            @if ($sort == 'fecha_nacimiento')
+                                @if ($direction == 'asc')
+                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                                @else
+                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                @endif
+                            @else
+                                <i class="fal fa-sort"> </i>
+                            @endif
+                        </th>
+                        <th wire:click="order('direccion')" class="large">Dirección
+                            @if ($sort == 'direccion')
+                                @if ($direction == 'asc')
+                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                                @else
+                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                @endif
+                            @else
+                                <i class="fal fa-sort"> </i>
+                            @endif
+                        </th>
+                        <th wire:click="order('telefono')">Teléfono
+                            @if ($sort == 'telefono')
+                                @if ($direction == 'asc')
+                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                                @else
+                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                @endif
+                            @else
+                                <i class="fal fa-sort"> </i>
+                            @endif
+                        </th>
                         <th colspan="3">Acciones</th>
                     </tr>
                 </thead>
@@ -48,24 +109,10 @@
                         @endforeach
                     @else
                         <tr>
-<<<<<<< HEAD
-                            <td>{{ $counter }}</td>
-                            <td>{{ $admin->nombres . ' ' . $admin->apellido_paterno . ' ' . $admin->apellido_materno }}</td>
-                            <td>{{ $admin->carnet }}</td>
-                            <td>{{ $admin->fecha_nacimiento }}</td>
-                            <td>{{ $admin->direccion }}</td>
-                            <td>{{ $admin->telefono }}</td>
-                            <td><button class="btn btn-sm btn-warning"><i class="far fa-edit"></i></button></td>
-                            <td><button class="btn btn-sm btn-primary"><i class="far fa-eye"></i></button></td>
-                            <td><button class="btn btn-sm btn-danger"><i class="far fa-trash"></i></button></td>
-=======
                             <td colspan="7" style="text-align: center">¡Ups! Al parecer no exiten registros en esta
                                 tabla.</td>
->>>>>>> 72a00abadf91eb68967d38d1303c4e2184501861
                         </tr>
                     @endif
-
-
                 </tbody>
             </table>
         </div>
@@ -86,7 +133,8 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Nombres*</label>
-                            <input type="text" class="form-control form-control-sm col-8" id="name" name="name">
+                            <input type="text" class="form-control form-control-sm col-8" id="name"
+                                name="name">
                         </div>
                         <div class="form-group">
                             <label for="father_lastname">Apellido Paterno</label>
