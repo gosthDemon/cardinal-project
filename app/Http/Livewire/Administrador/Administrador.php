@@ -8,11 +8,12 @@ class Administrador extends Component
 {
 
     public function allAdmins(){
-        $users = DB::table('estudiantes')
-        ->join('personas','estudiantes.persona_id','=','personas.id')
+        $users = DB::table('administradores')
+        ->join('personas','administradores.persona_id','=','personas.id')
         ->join('users','personas.user_id','users.id')
         ->join('roles','users.role_id','roles.id')
-        ->where('roles.role','=','estudiante')
+        ->select('personas.*','administradores.id as administrador_id')
+        ->where('roles.role','=','administrador')
         ->get();
 
         return $users;
