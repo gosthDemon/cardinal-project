@@ -11,7 +11,6 @@ class Administrador extends Component
     public $search = "";
 
     public function allAdmins(){
-
         $search = $this->search;
 
         $users = DB::table('estudiantes')
@@ -61,14 +60,12 @@ class Administrador extends Component
 
         return $headers;
     }
-    public function render()
-    {
+    public function render(){
         return view('livewire.administrador.administrador',[
             'admins' => $this->allAdmins(),
             'headers' => $this->headers()
         ]);
     }
-
     public function order($sort){
         if($this->sort == $sort){
             if($this->direction == 'asc'){
@@ -81,7 +78,4 @@ class Administrador extends Component
             $this->direction = 'asc';
         }
     }
-
-    
-
 }

@@ -22,20 +22,20 @@
             <table>
                 <thead>
                     <tr>
-                        @foreach ($headers as $field)
-                            <th wire:click="order('{{ $field->field }}')">
-                                <span class="label">{{ $field->name }}</span>
-                                @if ($sort == '{{ $field->field }}')
-                                    @if ($direction == 'asc')
-                                        <i class="fal fa-sort-alpha-up-alt icon-sort"> </i>
-                                    @else
-                                        <i class="fal fa-sort-alpha-down-alt icon-sort"> </i>
-                                    @endif
-                                @else
-                                    <i class="fal fa-sort icon-sort"> </i>
-                                @endif
-                            </th>
-                        @endforeach
+@foreach ($headers as $field)
+    <th wire:click="order('{{ $field->field }}')">
+        <span class="label">{{ $field->name }}</span>
+        @if ($sort == '{{ $field->field }}')
+            @if ($direction == 'asc')
+                <i class="fal fa-sort-alpha-up-alt icon-sort"> </i>
+            @else
+                <i class="fal fa-sort-alpha-down-alt icon-sort"> </i>
+            @endif
+        @else
+            <i class="fal fa-sort icon-sort"> </i>
+        @endif
+    </th>
+@endforeach
                         <th colspan="3">Acciones</th>
                     </tr>
                 </thead>

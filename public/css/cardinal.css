@@ -605,29 +605,7 @@ table{
     margin-top: 10px;
     table-layout: fixed !important;
 }
-    thead{
-        font-size: 18px;
-        font-family: 'Nunito',sans-serif;
-        text-transform: uppercase;
-        text-align: left;
-    }
-    thead tr th, tbody tr td{
-        padding: 7px 20px 7px 0px;
-    }
-    thead tr th{
-        font-weight: 400;
-        cursor: pointer;
-        overflow-x: hidden;
-    }
-    thead tr th span{
-        display: inline-block;
-    }
-    thead tr th i{
-        font-size: 12px;
-        display: inline-block;
-        float: right;
-        margin-top: 5px;
-    }
+
 tbody{
     font-size: 16px;
     font-family: 'Nunito',sans-serif;
