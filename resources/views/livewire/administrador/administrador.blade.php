@@ -14,83 +14,28 @@
         </div>
     </div>
     <div class="frontPage-body card p-3">
-        <div class="form-inline">
-            <label for="search" class="d-inline-block">Buscar:&nbsp;</label> 
-            <input wire:model="search" type="text" name="search" id="search" class="form-control form-control-sm d-inline-block" placeholder="Ej. Jhon Snow">
-            
+        <div class="search-input-table-content">
+            <input type="text" wire:model="search" class="search-input-table" id="search-input-table"><i
+                class="fal fa-search"></i>
         </div>
-            
         <div class="card-body  table-responsive p-0">
             <table>
                 <thead>
                     <tr>
-                        <th style="cursor: pointer" wire:click="order('id')">#
-                            @if ($sort == 'id')
-                                @if ($direction == 'asc')
-                                    <i class="fal fa-sort-alpha-up-alt"> </i>
+                        @foreach ($headers as $field)
+                            <th wire:click="order('{{ $field->field }}')">
+                                <span class="label">{{ $field->name }}</span>
+                                @if ($sort == '{{ $field->field }}')
+                                    @if ($direction == 'asc')
+                                        <i class="fal fa-sort-alpha-up-alt icon-sort"> </i>
+                                    @else
+                                        <i class="fal fa-sort-alpha-down-alt icon-sort"> </i>
+                                    @endif
                                 @else
-                                    <i class="fal fa-sort-alpha-down-alt"> </i>
+                                    <i class="fal fa-sort icon-sort"> </i>
                                 @endif
-                            @else
-                                <i class="fal fa-sort"> </i>
-                            @endif
-                        </th>
-                        <th wire:click="order('nombres')">
-                            Nombre
-                            @if ($sort == 'nombres')
-                                @if ($direction == 'asc')
-                                    <i class="fal fa-sort-alpha-up-alt"> </i>
-                                @else
-                                    <i class="fal fa-sort-alpha-down-alt"> </i>
-                                @endif
-                            @else
-                                <i class="fal fa-sort"> </i>
-                            @endif
-                        </th>
-                        <th wire:click="order('carnet')">Carnet
-                            @if ($sort == 'carnet')
-                                @if ($direction == 'asc')
-                                    <i class="fal fa-sort-alpha-up-alt"> </i>
-                                @else
-                                    <i class="fal fa-sort-alpha-down-alt"> </i>
-                                @endif
-                            @else
-                                <i class="fal fa-sort"> </i>
-                            @endif
-                        </th>
-                        <th wire:click="order('fecha_nacimiento')">Nacimiento
-                            @if ($sort == 'fecha_nacimiento')
-                                @if ($direction == 'asc')
-                                    <i class="fal fa-sort-alpha-up-alt"> </i>
-                                @else
-                                    <i class="fal fa-sort-alpha-down-alt"> </i>
-                                @endif
-                            @else
-                                <i class="fal fa-sort"> </i>
-                            @endif
-                        </th>
-                        <th wire:click="order('direccion')" class="large">Dirección
-                            @if ($sort == 'direccion')
-                                @if ($direction == 'asc')
-                                    <i class="fal fa-sort-alpha-up-alt"> </i>
-                                @else
-                                    <i class="fal fa-sort-alpha-down-alt"> </i>
-                                @endif
-                            @else
-                                <i class="fal fa-sort"> </i>
-                            @endif
-                        </th>
-                        <th wire:click="order('telefono')">Teléfono
-                            @if ($sort == 'telefono')
-                                @if ($direction == 'asc')
-                                    <i class="fal fa-sort-alpha-up-alt"> </i>
-                                @else
-                                    <i class="fal fa-sort-alpha-down-alt"> </i>
-                                @endif
-                            @else
-                                <i class="fal fa-sort"> </i>
-                            @endif
-                        </th>
+                            </th>
+                        @endforeach
                         <th colspan="3">Acciones</th>
                     </tr>
                 </thead>
@@ -104,7 +49,7 @@
                                 </td>
                                 <td>{{ $admin->carnet }}</td>
                                 <td>{{ $admin->fecha_nacimiento }}</td>
-                                <td>{{ $admin->direccion }}</td>
+                                <td class="large">{{ $admin->direccion }}</td>
                                 <td>{{ $admin->telefono }}</td>
                                 <td class="actions-content">
                                     <button class="show-btn button"><i class="fal fa-eye"></i></button>
@@ -123,7 +68,6 @@
             </table>
         </div>
     </div>
-
     <!-- Modal New User-->
     <div class="modal fade" id="modal_new_user" tabindex="-1" role="dialog" aria-labelledby="Nuevo Usuario"
         aria-hidden="true">

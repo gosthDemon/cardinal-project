@@ -31,11 +31,41 @@ class Administrador extends Component
 
         return $users;
     }
+    public function headers() {
+        $headers = [
+            (object) [
+                "field" => "id",
+                "name" => "#",
+            ],
+            (object) [
+                "field" => "nombres",
+                "name" => "nombre",
+            ],
+            (object) [
+                "field" => "carnet",
+                "name" => "carnet",
+            ],
+            (object) [
+                "field" => "fecha_nacimiento",
+                "name" => "nacimiento",
+            ],
+            (object) [
+                "field" => "direccion",
+                "name" => "direccion",
+            ],
+            (object) [
+                "field" => "telefono",
+                "name" => "telefono",
+            ],
+        ];
 
+        return $headers;
+    }
     public function render()
     {
         return view('livewire.administrador.administrador',[
-            'admins' => $this->allAdmins()
+            'admins' => $this->allAdmins(),
+            'headers' => $this->headers()
         ]);
     }
 
