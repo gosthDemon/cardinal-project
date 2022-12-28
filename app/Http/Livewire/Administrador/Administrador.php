@@ -8,8 +8,12 @@ class Administrador extends Component
 {
     public $sort = "id";
     public $direction = "asc";
+    public $search = "";
 
     public function allAdmins(){
+
+        $search = $this->search;
+
         $users = DB::table('estudiantes')
         ->join('personas','estudiantes.persona_id','=','personas.id')
         ->join('users','personas.user_id','users.id')
@@ -17,6 +21,11 @@ class Administrador extends Component
         ->select('personas.nombres','personas.apellido_paterno','personas.apellido_materno',
         'personas.carnet','personas.fecha_nacimiento','personas.direccion','personas.telefono','estudiantes.id')
         ->orderBy($this->sort, $this->direction)
+        ->where(function($query) use($search){
+            $query->where('estudiantes.id', 'LIKE', "%".$search."%")
+                ->orWhere('personas.nombres', 'LIKE', "%".$search."%")
+                ->orWhere('personas.apellido_paterno', 'LIKE', "%".$search."%")
+                ->orWhere('personas.apellido_materno', 'LIKE', "%".$search."%");})
         ->where('roles.role','=','estudiante')
         ->get();
 

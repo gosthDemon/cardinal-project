@@ -65,7 +65,7 @@
             </a>
             <div class="search-input-container">
                 <a href="#"><i class="fad fa-search"></i></a>
-                <input type="text" class="search-input" placeholder="Search here...">
+                <input type="text" class="search-input" placeholder="Search user...">
             </div>
             <div class="header-icons">
                 <a class="close-session icon-1 notify-icon">

@@ -14,6 +14,12 @@
         </div>
     </div>
     <div class="frontPage-body card p-3">
+        <div class="form-inline">
+            <label for="search" class="d-inline-block">Buscar:&nbsp;</label> 
+            <input wire:model="search" type="text" name="search" id="search" class="form-control form-control-sm d-inline-block" placeholder="Ej. Jhon Snow">
+            
+        </div>
+            
         <div class="card-body  table-responsive p-0">
             <table>
                 <thead>
