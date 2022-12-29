@@ -15,27 +15,27 @@
     </div>
     <div class="frontPage-body card p-3">
         <div class="search-input-table-content">
-            <input type="text" wire:model="search" class="search-input-table" id="search-input-table"><i
-                class="fal fa-search"></i>
+            <input type="text" wire:model="search" class="search-input-table" id="search_input_table" placeholder="Buscar en la tabla">
+            <i class="fal fa-search"></i>
         </div>
         <div class="card-body  table-responsive p-0">
             <table>
                 <thead>
                     <tr>
-@foreach ($headers as $field)
-    <th wire:click="order('{{ $field->field }}')">
-        <span class="label">{{ $field->name }}</span>
-        @if ($sort == '{{ $field->field }}')
-            @if ($direction == 'asc')
-                <i class="fal fa-sort-alpha-up-alt icon-sort"> </i>
-            @else
-                <i class="fal fa-sort-alpha-down-alt icon-sort"> </i>
-            @endif
-        @else
-            <i class="fal fa-sort icon-sort"> </i>
-        @endif
-    </th>
-@endforeach
+                        @foreach ($headers as $field)
+                            <th wire:click="order('{{ $field->field }}')">
+                                <span class="label">{{ $field->name }}</span>
+                                @if ($sort == '{{ $field->field }}')
+                                    @if ($direction == 'asc')
+                                        <i class="fal fa-sort-alpha-up-alt icon-sort"> </i>
+                                    @else
+                                        <i class="fal fa-sort-alpha-down-alt icon-sort"> </i>
+                                    @endif
+                                @else
+                                    <i class="fal fa-sort icon-sort"> </i>
+                                @endif
+                            </th>
+                        @endforeach
                         <th colspan="3">Acciones</th>
                     </tr>
                 </thead>
@@ -66,6 +66,10 @@
                     @endif
                 </tbody>
             </table>
+            <nav class="p-2 d-flex justify-content-end">
+                {!!$admins->links()!!}
+            </nav>
+            
         </div>
     </div>
     <!-- Modal New User-->

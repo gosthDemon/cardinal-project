@@ -3,12 +3,16 @@
 namespace App\Http\Livewire\Administrador;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
-
+use Livewire\WithPagination;
 class Administrador extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public $sort = "id";
     public $direction = "asc";
     public $search = "";
+    
 
     public function allAdmins(){
         $search = $this->search;
@@ -26,7 +30,7 @@ class Administrador extends Component
                 ->orWhere('personas.apellido_paterno', 'LIKE', "%".$search."%")
                 ->orWhere('personas.apellido_materno', 'LIKE', "%".$search."%");})
         ->where('roles.role','=','estudiante')
-        ->get();
+        ->paginate(50);
 
         return $users;
     }
