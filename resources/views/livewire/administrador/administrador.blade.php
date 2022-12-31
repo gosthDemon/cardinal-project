@@ -14,16 +14,28 @@
         </div>
     </div>
     <div class="frontPage-body card p-3">
+        <div class="search-input-table-content">
+            <input type="text" wire:model="search" class="search-input-table" id="search_input_table" placeholder="Buscar en la tabla">
+            <i class="fal fa-search"></i>
+        </div>
         <div class="card-body  table-responsive p-0">
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Nombre</th>
-                        <th>Carnet</th>
-                        <th>Nacimiento</th>
-                        <th class="large">Dirección</th>
-                        <th>Teléfono</th>
+                        @foreach ($headers as $field)
+                            <th wire:click="order('{{ $field->field }}')">
+                                <span class="label">{{ $field->name }}</span>
+                                @if ($sort == '{{ $field->field }}')
+                                    @if ($direction == 'asc')
+                                        <i class="fal fa-sort-alpha-up-alt icon-sort"> </i>
+                                    @else
+                                        <i class="fal fa-sort-alpha-down-alt icon-sort"> </i>
+                                    @endif
+                                @else
+                                    <i class="fal fa-sort icon-sort"> </i>
+                                @endif
+                            </th>
+                        @endforeach
                         <th colspan="3">Acciones</th>
                     </tr>
                 </thead>
@@ -37,7 +49,7 @@
                                 </td>
                                 <td>{{ $admin->carnet }}</td>
                                 <td>{{ $admin->fecha_nacimiento }}</td>
-                                <td>{{ $admin->direccion }}</td>
+                                <td class="large">{{ $admin->direccion }}</td>
                                 <td>{{ $admin->telefono }}</td>
                                 <td class="actions-content">
                                     <button class="show-btn button"><i class="fal fa-eye"></i></button>
@@ -53,9 +65,12 @@
                     @endif
                 </tbody>
             </table>
+            <nav class="p-2 d-flex justify-content-end">
+                {!!$admins->links()!!}
+            </nav>
+
         </div>
     </div>
-
     <!-- Modal New User-->
     <div class="modal fade" id="modal_new_user" tabindex="-1" role="dialog" aria-labelledby="Nuevo Usuario"
         aria-hidden="true">
