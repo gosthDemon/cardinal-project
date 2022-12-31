@@ -1,16 +1,22 @@
 //Vars
-let button_open_menu = document.querySelectorAll('.list__img');
-let open_menu_buttons = document.querySelectorAll('.open_menu_close');
-let menu_web = document.getElementById('menu_lateral');
+const inputs = document.querySelectorAll(".cardinal-input");
+const numberInputs = document.querySelectorAll('input[type="number"]');
+const selects = document.querySelectorAll('select');
+
+let buttonOpenMenu = document.querySelectorAll('.list__img');
+let openMenuButtons = document.querySelectorAll('.open_menu_close');
+let menuWeb = document.getElementById('menu_lateral');
+let menuMobile = document.getElementById('menu_mobile');
 let body = document.getElementById('container_body');
 let iconos = document.querySelectorAll('.list__img');
 let arrows = document.querySelectorAll('.list__arrow');
 let logoBig = document.getElementById('img_logo');
 let logoSmall = document.getElementById('img_logo_small');
+let newUserButton = document.getElementById('new_user_button');
 
 let containListSecondary = document.querySelectorAll('.contain-list-secondary');
 
-button_open_menu.forEach(button => {
+buttonOpenMenu.forEach(button => {
     button.addEventListener('click', ()=>{
         let menu = document.getElementById('menu_lateral');
         if(menu.classList.contains('ocultar-menu')){
@@ -19,14 +25,13 @@ button_open_menu.forEach(button => {
     })
 });
 
-open_menu_buttons.forEach(open_menu_button => {
-    open_menu_button.addEventListener('click',()=>{
+openMenuButtons.forEach(openMenuButton => {
+    openMenuButton.addEventListener('click',()=>{
         // alert('sdfsd');
         if(window.innerWidth < 768 || window.screen.width < 768){
-            let menu_mobile = document.getElementById('menu_mobile');
-            menu_mobile.classList.toggle('open-menu-mobile');
+            menuMobile.classList.toggle('open-menu-mobile');
         }else{
-            menu_web.classList.toggle('ocultar-menu');
+            menuWeb.classList.toggle('ocultar-menu');
             body.classList.toggle('agrandar-body');
             logoBig.classList.toggle('ocultar-logo');
             logoSmall.classList.toggle('aparecer-logo-small');
@@ -43,10 +48,11 @@ open_menu_buttons.forEach(open_menu_button => {
 
 containListSecondary.forEach(openSecondaryList => {
     openSecondaryList.addEventListener('click',()=>{
-        let listSecondary = $(openSecondaryList).next('.content-secondary-item').toggleClass('open-secondary-list');
+        $(openSecondaryList).next('.content-secondary-item').toggleClass('open-secondary-list');
     })
 });
 
+//Pulso para iconos
 window.onload = function(){
     let icons = document.querySelectorAll(".icon-next");
 
@@ -74,4 +80,68 @@ window.onload = function(){
                 break;
         }
     })
+
+    //Create Button
+
 }
+
+//Animations for Inputs with materlize styles
+inputs.forEach((input) => {
+    //when have focus
+    input.onfocus = () => {
+        $(input).next("label").addClass("focus-input");
+    };
+    //when it loses focus
+    input.addEventListener("blur", () => {
+        if (input.value == "" || input.value == null) {
+            $(input).next("label").removeClass("focus-input");
+            $(input).removeClass("line-focus-input");
+        } else {
+            if(input.validity.valid){
+                    $(input).addClass("line-focus-input");
+                    if($(input).hasClass('line-focus-input-invalid')){
+                        $(input).removeClass("line-focus-input-invalid");
+                    }
+            }else{
+                $(input).addClass("line-focus-input-invalid");
+                if($(input).hasClass('line-focus-input')){
+                    $(input).removeClass("line-focus-input");
+                }
+            }
+        }
+    });
+    //When the input contain something but is disabled.
+    if (input.value != "") {
+        if (input.disabled) {
+            $(input).next("label").addClass("focus-input-disabled");
+        } else {
+            $(input).addClass("line-focus-input");
+            $(input).next("label").addClass("focus-input");
+        }
+    }
+    if(input.type == "date" || input.type =="datetime"){
+        $(input).next("label").addClass("focus-input-disabled");
+    }
+});
+selects.forEach(select => {
+    select.onfocus = () => {
+        $(select).next("label").addClass("focus-input");
+    };
+    select.addEventListener("blur", () => {
+        if (select.value == "" || select.value == null) {
+            $(select).next("label").removeClass("focus-input");
+            $(select).removeClass("line-focus-input");
+        } else {
+            $(select).next("label").addClass("focus-input");
+            $(select).addClass("line-focus-input");
+        }
+    });
+});
+//Prevent insert "e" in number inputs
+numberInputs.forEach((input) => {
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "e") {
+            event.preventDefault();
+        }
+    });
+});

@@ -9,7 +9,7 @@
             </ul>
         </div>
         <div class="button">
-            <a href="#" class="button-report" data-toggle="modal" data-target="#modal_new_user">Nuevo
+            <a href="#" class="button-report" id="new_user_button" data-toggle="modal" data-target="#modal_new_user">Nuevo
                 Administrador</a>
         </div>
     </div>
@@ -41,31 +41,16 @@
                                 <td>{{ $admin->telefono }}</td>
                                 <td class="actions-content">
                                     <button class="show-btn button"><i class="fal fa-eye"></i></button>
-                                    <button class="edit-btn button"><i class="fal fa-edit"></i></button>
+                                    <button class="edit-btn button"><i class="fas fa-edit"></i></button>
                                     <button class="delete-btn button"><i class="fal fa-trash"></i></button>
                                 </td>
                             </tr>
                         @endforeach
                     @else
                         <tr>
-<<<<<<< HEAD
-                            <td>{{ $counter }}</td>
-                            <td>{{ $admin->nombres . ' ' . $admin->apellido_paterno . ' ' . $admin->apellido_materno }}</td>
-                            <td>{{ $admin->carnet }}</td>
-                            <td>{{ $admin->fecha_nacimiento }}</td>
-                            <td>{{ $admin->direccion }}</td>
-                            <td>{{ $admin->telefono }}</td>
-                            <td><button class="btn btn-sm btn-warning"><i class="far fa-edit"></i></button></td>
-                            <td><button class="btn btn-sm btn-primary"><i class="far fa-eye"></i></button></td>
-                            <td><button class="btn btn-sm btn-danger"><i class="far fa-trash"></i></button></td>
-=======
-                            <td colspan="7" style="text-align: center">¡Ups! Al parecer no exiten registros en esta
-                                tabla.</td>
->>>>>>> 72a00abadf91eb68967d38d1303c4e2184501861
+                            <td colspan="7" style="text-align: center">¡Ups! Al parecer no exiten registros en esta tabla.</td>
                         </tr>
                     @endif
-
-
                 </tbody>
             </table>
         </div>
@@ -84,38 +69,46 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-group">
-                            <label for="name">Nombres*</label>
-                            <input type="text" class="form-control form-control-sm col-8" id="name" name="name">
+                        <div class="content-input">
+                            <input type="text" class="cardinal-input">
+                            <label for="textInput">Nombre</label>
                         </div>
-                        <div class="form-group">
-                            <label for="father_lastname">Apellido Paterno</label>
-                            <input type="text" class="form-control form-control-sm col-7" id="father_lastname">
+                        <div class="content-input">
+                            <input type="text" class="cardinal-input">
+                            <label for="textInput">Apellido Paterno</label>
                         </div>
-                        <div class="form-group">
-                            <label for="mother_lastname">Apellido Materno</label>
-                            <input type="text" class="form-control form-control-sm col-7" id="mother_lastname">
+                        <div class="content-input">
+                            <input type="text" class="cardinal-input">
+                            <label for="textInput">Apellido Materno</label>
                         </div>
-                        <div class="form-group">
-                            <label for="identity_card">Carnet*</label>
-                            <input type="text" class="form-control form-control-sm col-5" id="identity_card">
+                        <div class="content-input">
+                            <input type="number" class="cardinal-input">
+                            <label for="textInput">Carnet</label>
                         </div>
-                        <div class="form-group">
-                            <label for="birth_date">Fecha de Nacimiento*</label>
-                            <input type="date" class="form-control form-control-sm col-4" id="birthdate">
+                        <div class="content-input">
+                            <input type="date"   class="cardinal-input">
+                            <label for="textInput">Fecha de Nacimiento</label>
                         </div>
-                        <div class="form-group">
-                            <label for="address">Direccion*</label>
-                            <input type="text" class="form-control form-control-sm" id="address">
+                        <div class="content-input">
+                            <select name="" id="" class="cardinal-select">
+                                <option value=""></option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                                <option value="O">Otro</option>
+                            </select>
+                            <label for="textInput">Fecha de Nacimiento</label>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Telefono</label>
-                            <input type="text" class="form-control form-control-sm col-5" id="phone">
+                        <div class="content-input">
+                            <input type="text"   class="cardinal-input">
+                            <label for="textInput">Direccion</label>
                         </div>
-                        <br>
-                        <div class="formg-group">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
+                        <div class="content-input">
+                            <input type="number" class="cardinal-input">
+                            <label for="textInput">Telefono</label>
+                        </div>
+                        <div class="content-input-buttons">
+                            <button class="register-button">Registrar</button>
+                            <button class="cancel-button">Cancelar</button>
                         </div>
                     </form>
                 </div>
