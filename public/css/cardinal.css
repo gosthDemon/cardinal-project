@@ -588,6 +588,12 @@ html,body{
     z-index: 10000;
     background: red;
 }
+.alerts-cardinal .content-alerts{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .alerts-cardinal div{
     opacity: 0;
 }
