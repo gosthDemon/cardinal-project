@@ -31,7 +31,6 @@ class tutor extends Seeder
             'nombres' => 'Tutor',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Uno',
-            'carnet' => '12345677',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'M',
             'direccion' => '123 Main Street',
@@ -41,6 +40,7 @@ class tutor extends Seeder
         ]);
         DB::table('tutores')->insert([
             'persona_id' => $persona_tutor_id,
+            'carnet' => '12345677',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -60,7 +60,6 @@ class tutor extends Seeder
             'nombres' => 'Tutor',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Dos',
-            'carnet' => '12345678',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -70,6 +69,7 @@ class tutor extends Seeder
         ]);
         DB::table('tutores')->insert([
             'persona_id' => $persona_tutor_id_2,
+            'carnet' => '12345678',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -89,7 +89,6 @@ class tutor extends Seeder
             'nombres' => 'Tutor',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Tres',
-            'carnet' => '12345679',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -99,6 +98,7 @@ class tutor extends Seeder
         ]);
         DB::table('tutores')->insert([
             'persona_id' => $persona_tutor_id_3,
+            'carnet' => '12345679',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

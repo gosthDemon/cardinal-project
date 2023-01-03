@@ -15,6 +15,7 @@ class CreateDocentesTable extends Migration
     {
         Schema::create('docentes', function (Blueprint $table) {
             $table->id();
+            $table->string('carnet')->unique();
             $table->string('especialidad')->comment('Refiere de la licenciatura que cada docente posee. Si posee mas de una se deben registrar con una coma ","');
             $table->unsignedBigInteger('persona_id');
             $table->foreign('persona_id')->references('id')->on('personas')->onDelete('cascade');

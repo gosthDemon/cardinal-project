@@ -1,0 +1,10 @@
+1.-Los carnet pertenecen a la tabla del tipo de usuario (Esto para evitar problemas de unicidad del campo ya que
+existiran Docentes que sean al mismo tiempo Tutores o Administradores)
+
+
+Formatos de Emails
+
+carnet_type@gmail.com
+
+Ej: 1234567_administrador@cardinal.com
+Ej: 7654321_docente@cardinal.com

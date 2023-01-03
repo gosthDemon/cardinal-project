@@ -21,7 +21,6 @@ class CreatePersonasTable extends Migration
             $table->string('nombres');
             $table->string('apellido_paterno')->nullable();
             $table->string('apellido_materno')->nullable();
-            $table->string('carnet')->unique();
             $table->date('fecha_nacimiento');
             $table->string('sexo');
             $table->string('direccion');

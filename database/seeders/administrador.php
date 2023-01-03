@@ -31,7 +31,6 @@ class administrador extends Seeder
             'nombres' => 'John',
             'apellido_paterno' => 'Doe',
             'apellido_materno' => 'Smith',
-            'carnet' => '12345670',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'M',
             'direccion' => '123 Main Street',
@@ -41,6 +40,7 @@ class administrador extends Seeder
         ]);
         DB::table('administradores')->insert([
             'persona_id' => $persona_super_admin_id,
+            'carnet' => '12345670',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -61,7 +61,6 @@ class administrador extends Seeder
             'nombres' => 'James',
             'apellido_paterno' => 'Smith',
             'apellido_materno' => 'Smith',
-            'carnet' => '12345671',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'M',
             'direccion' => '123 Main Street',
@@ -71,6 +70,7 @@ class administrador extends Seeder
         ]);
         DB::table('administradores')->insert([
             'persona_id' => $persona_admin_id,
+            'carnet' => '12345671',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -91,7 +91,6 @@ class administrador extends Seeder
             'nombres' => 'Luis',
             'apellido_paterno' => 'Vargas',
             'apellido_materno' => '',
-            'carnet' => '12345672',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'M',
             'direccion' => '123 Main Street',
@@ -101,6 +100,7 @@ class administrador extends Seeder
         ]);
         DB::table('administradores')->insert([
             'persona_id' => $persona_director_id,
+            'carnet' => '12345672',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -121,7 +121,6 @@ class administrador extends Seeder
             'nombres' => 'Moira',
             'apellido_paterno' => 'Sankut',
             'apellido_materno' => 'Medinaccelli',
-            'carnet' => '12345673',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -131,6 +130,7 @@ class administrador extends Seeder
         ]);
         DB::table('administradores')->insert([
             'persona_id' => $persona_secretaria_id,
+            'carnet' => '12345673',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

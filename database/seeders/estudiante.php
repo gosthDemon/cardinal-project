@@ -14,7 +14,7 @@ class estudiante extends Seeder
      */
     public function run()
     {
-        
+
         $estudiante_id_1 = DB::table('users')->insertGetId([
             'name' => 'Estudiante 1',
             'email' => 'estudiante_1@cardinal.com',
@@ -30,7 +30,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Uno',
-            'carnet' => '12345601',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -41,6 +40,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_1,
             'tutor_id'=>1,
+            'carnet' => '12345601',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -60,7 +60,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Dos',
-            'carnet' => '12345602',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -71,6 +70,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_2,
             'tutor_id'=>2,
+            'carnet' => '12345602',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -91,7 +91,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Tres',
-            'carnet' => '12345603',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -102,6 +101,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_3,
             'tutor_id'=>1,
+            'carnet' => '12345603',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -122,7 +122,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Cuatro',
-            'carnet' => '12345604',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -133,6 +132,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_4,
             'tutor_id'=>2,
+            'carnet' => '12345604',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -153,7 +153,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Cinco',
-            'carnet' => '12345605',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -164,6 +163,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_5,
             'tutor_id'=>1,
+            'carnet' => '12345605',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -183,7 +183,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Seis',
-            'carnet' => '12345606',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -194,6 +193,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_6,
             'tutor_id'=>2,
+            'carnet' => '12345606',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -214,7 +214,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Siete',
-            'carnet' => '12345607',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -225,6 +224,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_7,
             'tutor_id'=>2,
+            'carnet' => '12345607',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -245,7 +245,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Ocho',
-            'carnet' => '12345608',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -256,6 +255,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_8,
             'tutor_id'=>1,
+            'carnet' => '12345608',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -276,7 +276,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Nueve',
-            'carnet' => '12345609',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -287,6 +286,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_9,
             'tutor_id'=>2,
+            'carnet' => '12345609',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -307,7 +307,6 @@ class estudiante extends Seeder
             'nombres' => 'Estudiante',
             'apellido_paterno' => 'Nro',
             'apellido_materno' => 'Diez',
-            'carnet' => '12345610',
             'fecha_nacimiento' => '2000-01-01',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -318,6 +317,7 @@ class estudiante extends Seeder
         DB::table('estudiantes')->insert([
             'persona_id' => $persona_estudiante_id_10,
             'tutor_id' => 3,
+            'carnet' => '12345610',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

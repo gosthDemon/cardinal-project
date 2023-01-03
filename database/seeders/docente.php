@@ -31,7 +31,6 @@ class docente extends Seeder
             'nombres' => 'Darlin Belen',
             'apellido_paterno' => 'Ruiz',
             'apellido_materno' => 'Valdez',
-            'carnet' => '12345675',
             'fecha_nacimiento' => '2006-05-16',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -41,11 +40,12 @@ class docente extends Seeder
         ]);
         DB::table('docentes')->insert([
             'persona_id' => $persona_docente_id,
+            'carnet' => '12345675',
             'especialidad' => 'Lic. en Artes',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        
+
         //DOCENTE 2
         $docente_id = DB::table('users')->insertGetId([
             'name' => 'Docente 2',
@@ -62,7 +62,6 @@ class docente extends Seeder
             'nombres' => 'Isaac Alberth',
             'apellido_paterno' => 'Newnstein',
             'apellido_materno' => '',
-            'carnet' => '12345676',
             'fecha_nacimiento' => '1999-03-20',
             'sexo' => 'F',
             'direccion' => '123 Main Street',
@@ -72,6 +71,7 @@ class docente extends Seeder
         ]);
         DB::table('docentes')->insert([
             'persona_id' => $persona_docente_id,
+            'carnet' => '12345676',
             'especialidad' => 'Lic. en Física',
             'created_at' => now(),
             'updated_at' => now(),
