@@ -13,6 +13,16 @@
 </head>
 
 <body>
+    <div class="alerts-cardinal">
+        <div class="content-alert">
+            <div class="success-alert">
+                Hola soy una alerta de success
+            </div>
+            <div class="error-alert">
+                Hola, soy una alerta de error
+            </div>
+        </div>
+    </div>
     <section class="menu-lateral" id="menu_lateral">
         <div class="logo-small-container">
             <img src="{{ URL::asset('img/moonlight/Moonlight-Logo.png') }}" id="img_logo_small" alt="">

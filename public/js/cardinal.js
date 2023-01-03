@@ -1,8 +1,4 @@
 //Vars
-const inputs = document.querySelectorAll(".cardinal-input");
-const numberInputs = document.querySelectorAll('input[type="number"]');
-const selects = document.querySelectorAll('select');
-
 let buttonOpenMenu = document.querySelectorAll('.list__img');
 let openMenuButtons = document.querySelectorAll('.open_menu_close');
 let menuWeb = document.getElementById('menu_lateral');
@@ -85,63 +81,91 @@ window.onload = function(){
 
 }
 
+window.onload = cardinalAnimateForms();
+
 //Animations for Inputs with materlize styles
-inputs.forEach((input) => {
-    //when have focus
-    input.onfocus = () => {
-        $(input).next("label").addClass("focus-input");
-    };
-    //when it loses focus
-    input.addEventListener("blur", () => {
-        if (input.value == "" || input.value == null) {
-            $(input).next("label").removeClass("focus-input");
-            $(input).removeClass("line-focus-input");
-        } else {
-            if(input.validity.valid){
-                    $(input).addClass("line-focus-input");
-                    if($(input).hasClass('line-focus-input-invalid')){
-                        $(input).removeClass("line-focus-input-invalid");
+function cardinalAnimateForms(){
+    // alert('hola');
+    const inputs = document.querySelectorAll(".cardinal-input");
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+    const selects = document.querySelectorAll('select');
+
+    inputs.forEach((input) => {
+        //when have focus
+        input.onfocus = () => {
+            $(input).next("label").addClass("focus-input");
+        };
+        //when it loses focus
+        input.addEventListener("blur", () => {
+            if (input.value == "" || input.value == null) {
+                $(input).next("label").removeClass("focus-input");
+                $(input).removeClass("line-focus-input");
+            } else {
+                if(input.validity.valid){
+                        $(input).addClass("line-focus-input");
+                        if($(input).hasClass('line-focus-input-invalid')){
+                            $(input).removeClass("line-focus-input-invalid");
+                        }
+                }else{
+                    $(input).addClass("line-focus-input-invalid");
+                    if($(input).hasClass('line-focus-input')){
+                        $(input).removeClass("line-focus-input");
                     }
-            }else{
-                $(input).addClass("line-focus-input-invalid");
-                if($(input).hasClass('line-focus-input')){
-                    $(input).removeClass("line-focus-input");
                 }
             }
+        });
+        //When the input contain something but is disabled.
+        if (input.value != "") {
+            if (input.disabled) {
+                $(input).next("label").addClass("focus-input-disabled");
+            } else {
+                $(input).addClass("line-focus-input");
+                $(input).next("label").addClass("focus-input");
+            }
         }
-    });
-    //When the input contain something but is disabled.
-    if (input.value != "") {
-        if (input.disabled) {
+
+        if(input.type == "date" || input.type =="datetime"){
             $(input).next("label").addClass("focus-input-disabled");
-        } else {
-            $(input).addClass("line-focus-input");
-            $(input).next("label").addClass("focus-input");
         }
-    }
-    if(input.type == "date" || input.type =="datetime"){
-        $(input).next("label").addClass("focus-input-disabled");
-    }
-});
-selects.forEach(select => {
-    select.onfocus = () => {
-        $(select).next("label").addClass("focus-input");
-    };
-    select.addEventListener("blur", () => {
-        if (select.value == "" || select.value == null) {
-            $(select).next("label").removeClass("focus-input");
-            $(select).removeClass("line-focus-input");
-        } else {
+    });
+    selects.forEach(select => {
+        select.onfocus = () => {
             $(select).next("label").addClass("focus-input");
-            $(select).addClass("line-focus-input");
-        }
+        };
+        select.addEventListener("blur", () => {
+            if (select.value == "" || select.value == null) {
+                $(select).next("label").removeClass("focus-input");
+                $(select).removeClass("line-focus-input");
+            } else {
+                $(select).next("label").addClass("focus-input");
+                $(select).addClass("line-focus-input");
+            }
+        });
     });
-});
-//Prevent insert "e" in number inputs
-numberInputs.forEach((input) => {
-    input.addEventListener("keydown", function (event) {
-        if (event.key === "e") {
-            event.preventDefault();
-        }
+    //Prevent insert "e" in number inputs
+    numberInputs.forEach((input) => {
+        input.addEventListener("keydown", function (event) {
+            if (event.key === "e") {
+                event.preventDefault();
+            }
+        });
     });
+}
+
+window.addEventListener('getAlert', event => {
+    if(event.detail.type == "error"){
+        let error = document.getElementById('msg-errorAlert');
+        showMessage(error);
+        error.firstElementChild.innerHTML = event.detail.message;
+    }else if(event.detail.type == 'success'){
+        let success = document.getElementById('msg-successAlert')
+        showMessage(success);
+        success.firstElementChild.innerHTML = event.detail.message;
+    }
 });
+function showMessage(element) {
+    element.style.display = 'block';
+    setTimeout(() => {
+        element.style.display = 'none';
+    }, 6000);
+}

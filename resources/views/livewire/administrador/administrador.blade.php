@@ -60,7 +60,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="7" style="text-align: center">¡Ups! Al parecer no exiten registros en esta tabla.</td>
+                            <td colspan="7" style="text-align: center">¡Ups! No existen registros coincidentes para esta tabla.</td>
                         </tr>
                     @endif
                 </tbody>
@@ -72,7 +72,7 @@
         </div>
     </div>
     <!-- Modal New User-->
-    <div class="modal fade" id="modal_new_user" tabindex="-1" role="dialog" aria-labelledby="Nuevo Usuario"
+    <div wire:ignore.self class="modal fade" id="modal_new_user" tabindex="-1" role="dialog" aria-labelledby="Nuevo Usuario"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -83,46 +83,108 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="content-input">
-                            <input type="text" class="cardinal-input">
-                            <label for="textInput">Nombre</label>
+                    <form wire:submit.prevent = "save">
+                        <div class="content-input" >
+                            <select wire:model.defer="cargo" id="sexo" class="cardinal-select" wire:ignore>
+                                <option value=""></option>
+                                <option value="3">Director</option>
+                                <option value="4">Secretaria</option>
+                            </select>
+                            <label for="textInput" wire:ignore>Seleccione un Cargo</label>
+                            <span class="error-message">
+                                @error('cargo')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <input type="text" class="cardinal-input">
-                            <label for="textInput">Apellido Paterno</label>
+                        <div class="content-input" >
+                            <input type="text" id="rda" wire:model.defer="rda" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore>RDA</label>
+                            <span class="error-message">
+                                @error('rda')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <input type="text" class="cardinal-input">
-                            <label for="textInput">Apellido Materno</label>
+                        <div class="content-input" >
+                            <input type="text" id="nombres" wire:model.defer="nombres" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore>Nombres</label>
+                            <span class="error-message">
+                                @error('nombres')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <input type="number" class="cardinal-input">
-                            <label for="textInput">Carnet</label>
+                        <div class="content-input" >
+                            <input type="text" id="apellido_paterno" wire:model.defer="apellido_paterno" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore >Apellido Paterno</label>
+                            <span class="error-message">
+                                @error('apellido_paterno')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <input type="date"   class="cardinal-input">
-                            <label for="textInput">Fecha de Nacimiento</label>
+                        <div class="content-input" >
+                            <input type="text" id="apellido_materno"wire:model.defer="apellido_materno" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore>Apellido Materno</label>
+                            <span class="error-message">
+                                @error('apellido_materno')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <select name="" id="" class="cardinal-select">
+                        <div class="content-input" >
+                            <input type="text" id="carnet" wire:model.defer="carnet" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore>Carnet</label>
+                            <span class="error-message">
+                                @error('carnet')
+                                    {{$message}}
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="content-input" >
+                            <input type="date" id="fecha_nacimiento" wire:model.defer="fecha_nacimiento" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore>Fecha de Nacimiento</label>
+                            <span class="error-message">
+                                @error('fecha_nacimiento')
+                                    {{$message}}
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="content-input" >
+                            <select wire:model.defer="sexo" id="sexo" class="cardinal-select" wire:ignore>
                                 <option value=""></option>
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                                 <option value="O">Otro</option>
                             </select>
-                            <label for="textInput">Fecha de Nacimiento</label>
+                            <label for="textInput" wire:ignore>Sexo</label>
+                            <span class="error-message">
+                                @error('sexo')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <input type="text"   class="cardinal-input">
-                            <label for="textInput">Direccion</label>
+                        <div class="content-input" >
+                            <input type="text" id="direccion" wire:ignore wire:model.defer="direccion" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore >Direccion</label>
+                            <span class="error-message">
+                                @error('direccion')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
-                        <div class="content-input">
-                            <input type="number" class="cardinal-input">
-                            <label for="textInput">Telefono</label>
+                        <div class="content-input" >
+                            <input type="number" id="telefono" wire:model.defer="telefono" class="cardinal-input" wire:ignore>
+                            <label for="textInput" wire:ignore>Telefono</label>
+                            <span class="error-message">
+                                @error('telefono')
+                                    {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="content-input-buttons">
-                            <button class="register-button">Registrar</button>
+                            <button type="submit" class="register-button" id="register_button">Registrar</button>
                             <button class="cancel-button">Cancelar</button>
                         </div>
                     </form>
@@ -131,3 +193,8 @@
         </div>
     </div>
 </div>
+@section('script')
+    <script>
+
+    </script>
+@endsection
