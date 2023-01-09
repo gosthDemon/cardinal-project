@@ -6,23 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ URL::asset('css/fontAwesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/cardinal.css') }}">
     @livewireStyles
     <title>Mis Cursos</title>
 </head>
-
 <body>
-    <div class="alerts-cardinal">
-        <div class="content-alert">
-            <div class="success-alert">
-                Hola soy una alerta de success
-            </div>
-            <div class="error-alert">
-                Hola, soy una alerta de error
-            </div>
-        </div>
-    </div>
     <section class="menu-lateral" id="menu_lateral">
         <div class="logo-small-container">
             <img src="{{ URL::asset('img/moonlight/Moonlight-Logo.png') }}" id="img_logo_small" alt="">
@@ -102,6 +92,7 @@
     <script src="{{ URL::asset('js/cardinal.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     @yield('script')
 </body>
 </html>

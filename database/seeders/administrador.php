@@ -25,22 +25,22 @@ class administrador extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_super_admin_id = DB::table('personas')->insertGetId([
+        $people_super_admin_id = DB::table('peoples')->insertGetId([
             'user_id' => $super_admin_id,
-            'fotografia' => '',
-            'nombres' => 'John',
-            'apellido_paterno' => 'Doe',
-            'apellido_materno' => 'Smith',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'M',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'John',
+            'paternal_lastname' => 'Doe',
+            'maternal_lastname' => 'Smith',
+            'birthday' => '2000-01-01',
+            'sex' => 'M',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('administradores')->insert([
-            'persona_id' => $persona_super_admin_id,
-            'carnet' => '12345670',
+        DB::table('administrators')->insert([
+            'people_id' => $people_super_admin_id,
+            'license' => '12345670',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -55,22 +55,22 @@ class administrador extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_admin_id = DB::table('personas')->insertGetId([
+        $people_admin_id = DB::table('peoples')->insertGetId([
             'user_id' => $admin_id,
-            'fotografia' => '',
-            'nombres' => 'James',
-            'apellido_paterno' => 'Smith',
-            'apellido_materno' => 'Smith',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'M',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'James',
+            'paternal_lastname' => 'Smith',
+            'maternal_lastname' => 'Smith',
+            'birthday' => '2000-01-01',
+            'sex' => 'M',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('administradores')->insert([
-            'persona_id' => $persona_admin_id,
-            'carnet' => '12345671',
+        DB::table('administrators')->insert([
+            'people_id' => $people_admin_id,
+            'license' => '12345671',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -85,22 +85,22 @@ class administrador extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_director_id = DB::table('personas')->insertGetId([
+        $people_director_id = DB::table('peoples')->insertGetId([
             'user_id' => $director_id,
-            'fotografia' => '',
-            'nombres' => 'Luis',
-            'apellido_paterno' => 'Vargas',
-            'apellido_materno' => '',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'M',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Luis',
+            'paternal_lastname' => 'Vargas',
+            'maternal_lastname' => '',
+            'birthday' => '2000-01-01',
+            'sex' => 'M',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('administradores')->insert([
-            'persona_id' => $persona_director_id,
-            'carnet' => '12345672',
+        DB::table('administrators')->insert([
+            'people_id' => $people_director_id,
+            'license' => '12345672',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -115,22 +115,22 @@ class administrador extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_secretaria_id = DB::table('personas')->insertGetId([
+        $people_secretaria_id = DB::table('peoples')->insertGetId([
             'user_id' => $secretaria_id,
-            'fotografia' => '',
-            'nombres' => 'Moira',
-            'apellido_paterno' => 'Sankut',
-            'apellido_materno' => 'Medinaccelli',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Moira',
+            'paternal_lastname' => 'Sankut',
+            'maternal_lastname' => 'Medinaccelli',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('administradores')->insert([
-            'persona_id' => $persona_secretaria_id,
-            'carnet' => '12345673',
+        DB::table('administrators')->insert([
+            'people_id' => $people_secretaria_id,
+            'license' => '12345673',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

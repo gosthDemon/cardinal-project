@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+use App\Models\Role;
+use App\Models\Administrator;
+use App\Models\User;
+
 class AdministradorController extends Controller
 {
     public function index(){
@@ -11,34 +15,7 @@ class AdministradorController extends Controller
     }
     public function test(){
 
-        $array = [
-            (object) [
-                "field" => "id",
-                "name" => "#",
-            ],
-            (object) [
-                "field" => "nombres",
-                "name" => "nombres",
-            ],
-            (object) [
-                "field" => "carnet",
-                "name" => "carnet",
-            ],
-            (object) [
-                "field" => "fecha_nacimiento",
-                "name" => "nacimiento",
-            ],
-            (object) [
-                "field" => "direccion",
-                "name" => "direccion",
-            ],
-            (object) [
-                "field" => "telefono",
-                "name" => "telefono",
-            ],
-        ];
-        $user = DB::table('docentes')->get();
-
+      $array = Role::find(2)->users;
         return $array;
     }
 }

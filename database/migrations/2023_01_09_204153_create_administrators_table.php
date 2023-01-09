@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTutoresTable extends Migration
+class CreateAdministratorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTutoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('tutores', function (Blueprint $table) {
+        Schema::create('administrators', function (Blueprint $table) {
             $table->id();
-            $table->string('carnet')->unique();
-            $table->unsignedBigInteger('persona_id');
-            $table->foreign('persona_id')->references('id')->on('personas')->onDelete('cascade');
+            $table->string('license')->unique();
+            $table->unsignedBigInteger('people_id');
+            $table->foreign('people_id')->references('id')->on('peoples')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTutoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutores');
+        Schema::dropIfExists('administrators');
     }
 }

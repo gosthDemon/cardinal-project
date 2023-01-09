@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePersonasTable extends Migration
+class CreatePeoplesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreatePersonasTable extends Migration
      */
     public function up()
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('peoples', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('fotografia')->nullable();
-            $table->string('nombres');
-            $table->string('apellido_paterno')->nullable();
-            $table->string('apellido_materno')->nullable();
-            $table->date('fecha_nacimiento');
-            $table->string('sexo');
-            $table->string('direccion');
-            $table->string('telefono')->nullable();
+            $table->string('picture_profile')->nullable();
+            $table->string('names');
+            $table->string('paternal_lastname')->nullable();
+            $table->string('maternal_lastname')->nullable();
+            $table->date('birthday');
+            $table->string('sex');
+            $table->string('direction');
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreatePersonasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personas');
+        Schema::dropIfExists('peoples');
     }
 }

@@ -154,18 +154,22 @@ function cardinalAnimateForms(){
 
 window.addEventListener('getAlert', event => {
     if(event.detail.type == "error"){
-        let error = document.getElementById('msg-errorAlert');
-        showMessage(error);
-        error.firstElementChild.innerHTML = event.detail.message;
+        Toastify({
+            text: event.detail.message,
+            duration: 5000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+        }).showToast();
     }else if(event.detail.type == 'success'){
-        let success = document.getElementById('msg-successAlert')
-        showMessage(success);
-        success.firstElementChild.innerHTML = event.detail.message;
+        Toastify({
+            text: event.detail.message,
+            duration: 5000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+        }).showToast();
     }
 });
-function showMessage(element) {
-    element.style.display = 'block';
-    setTimeout(() => {
-        element.style.display = 'none';
-    }, 6000);
-}
+
+
