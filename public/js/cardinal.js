@@ -172,4 +172,8 @@ window.addEventListener('getAlert', event => {
     }
 });
 
+window.addEventListener('closeModal', event => {
+    $('#'+event.detail.modal+'').modal('hide');
+});
+
 

@@ -40,6 +40,7 @@ class administrador extends Seeder
         ]);
         DB::table('administrators')->insert([
             'people_id' => $people_super_admin_id,
+            'rda' => '12345670',
             'license' => '12345670',
             'created_at' => now(),
             'updated_at' => now(),
@@ -70,6 +71,7 @@ class administrador extends Seeder
         ]);
         DB::table('administrators')->insert([
             'people_id' => $people_admin_id,
+            'rda'=>'12345671',
             'license' => '12345671',
             'created_at' => now(),
             'updated_at' => now(),
@@ -100,6 +102,7 @@ class administrador extends Seeder
         ]);
         DB::table('administrators')->insert([
             'people_id' => $people_director_id,
+            'rda' => '12345672',
             'license' => '12345672',
             'created_at' => now(),
             'updated_at' => now(),
@@ -130,6 +133,7 @@ class administrador extends Seeder
         ]);
         DB::table('administrators')->insert([
             'people_id' => $people_secretaria_id,
+            'rda' => '12345673',
             'license' => '12345673',
             'created_at' => now(),
             'updated_at' => now(),

@@ -45,12 +45,12 @@
                             <tr>
                                 <td>{{ $admin->id }}</td>
                                 <td class="large">
-                                    {{ $admin->nombres . ' ' . $admin->apellido_paterno . ' ' . $admin->apellido_materno }}
+                                    {{ $admin->names . ' ' . $admin->paternal_lastname . ' ' . $admin->maternal_lastname}}
                                 </td>
-                                <td>{{ $admin->carnet }}</td>
-                                <td>{{ $admin->fecha_nacimiento }}</td>
-                                <td class="large">{{ $admin->direccion }}</td>
-                                <td>{{ $admin->telefono }}</td>
+                                <td>{{ $admin->license }}</td>
+                                <td>{{ $admin->birthday }}</td>
+                                <td class="large">{{ $admin->direction }}</td>
+                                <td>{{ $admin->phone }}</td>
                                 <td class="actions-content">
                                     <button class="show-btn button"><i class="fal fa-eye"></i></button>
                                     <button class="edit-btn button"><i class="fas fa-edit"></i></button>

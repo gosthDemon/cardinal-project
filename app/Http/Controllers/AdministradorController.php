@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\Administrator;
 use App\Models\User;
+use App\Models\People;
 
 class AdministradorController extends Controller
 {
@@ -14,8 +15,7 @@ class AdministradorController extends Controller
         return view('admin.administrador.administrador');
     }
     public function test(){
-
-      $array = Role::find(2)->users;
-        return $array;
+        $admins = people::all();
+        return $admins;
     }
 }

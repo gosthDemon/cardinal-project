@@ -12,13 +12,14 @@ class Administrador extends Component
     protected $paginationTheme = 'bootstrap';
     protected $rules = ['cargo'=>'required',
                         'nombres'=>'required|max:40',
-                        'apellido_paterno'=>'required_without:apellido_materno|max:20',
-                        'apellido_materno'=>'required_without:apellido_paterno|max:20',
-                        'carnet'=>'required|max:11|min:6|unique:administradores,carnet',
+                        'apellido_paterno'=>'required_without:maternal_lastname|max:20',
+                        'apellido_materno'=>'required_without:paternal_lastname|max:20',
+                        'carnet'=>'required|max:11|min:6|unique:administrators,license',
                         'fecha_nacimiento' => 'required|date_format:Y-m-d',
                         'sexo' => 'required|max:1,min:1',
                         'direccion'=>'required|max:100',
                         'telefono'=>'min:7|max:12'];
+
     public $sort = "id";
     public $direction = "asc";
     public $search = "";
@@ -76,20 +77,20 @@ class Administrador extends Component
     public function allAdmins(){
         $search = $this->search;
 
-        $users = DB::table('estudiantes')
-        ->join('personas','estudiantes.persona_id','=','personas.id')
-        ->join('users','personas.user_id','users.id')
+        $users = DB::table('administrators')
+        ->join('peoples','administrators.people_id','=','peoples.id')
+        ->join('users','peoples.user_id','users.id')
         ->join('roles','users.role_id','roles.id')
-        ->select('personas.nombres','personas.apellido_paterno','personas.apellido_materno',
-        'estudiantes.carnet','personas.fecha_nacimiento','personas.direccion','personas.telefono','estudiantes.id')
+        ->select('peoples.names','peoples.paternal_lastname','peoples.maternal_lastname',
+        'administrators.license','peoples.birthday','peoples.direction','peoples.phone','administrators.id')
         ->orderBy($this->sort, $this->direction)
         ->where(function($query) use($search){
-            $query->where('estudiantes.id', 'LIKE', "%".$search."%")
-                ->orWhere('personas.nombres', 'LIKE', "%".$search."%")
-                ->orWhere('personas.apellido_paterno', 'LIKE', "%".$search."%")
-                ->orWhere('personas.apellido_materno', 'LIKE', "%".$search."%");})
-        ->where('roles.role','=','estudiante')
-        ->paginate(5);
+            $query->where('administrators.id', 'LIKE', "%".$search."%")
+                ->orWhere('peoples.names', 'LIKE', "%".$search."%")
+                ->orWhere('peoples.paternal_lastname', 'LIKE', "%".$search."%")
+                ->orWhere('peoples.maternal_lastname', 'LIKE', "%".$search."%");})
+        ->where('roles.role','=','director')
+        ->paginate(10);
 
         return $users;
     }
@@ -102,32 +103,43 @@ class Administrador extends Component
         DB::beginTransaction();
         try {
             $user_id = DB::Table('users')
-            ->insert(['name'=>$this->nombres,
+            ->insertGetId(['name'=>$this->nombres,
                     'email'=>$email,
                     'password'=>$password,
                     'role_id'=>$role,
                     'created_at'=>now()]);
 
-            $person_id = DB::table('personas')
-            ->insert(['user_id'=>$user_id,
-                    'nombres'=>$this->nombre,
-                    'apellido_paterno'=>$this->apellido_paterno,
-                    'apellido_materno'=>$this->apellido_materno,
-                    'fecha_nacimiento'=>$this->fecha_nacimiento,
-                    'sexo'=>$this->sexo,
-                    'direccion'=>$this->direccion,
-                    'telefono'=>$this->telefono,
-                    'created_at'=>now()]);
-
-            DB::Table('administradores')
-            ->insert(['persona_id'=>$person_id,
-                    'carnet'=>$this->carnet,
+            $people_id = DB::table('peoples')
+            ->insertGetId(['user_id'=>$user_id,
+                    'names'=>$this->nombres,
+                    'paternal_lastname'=>$this->apellido_paterno,
+                    'maternal_lastname'=>$this->apellido_materno,
+                    'birthday'=>$this->fecha_nacimiento,
+                    'sex'=>$this->sexo,
+                    'direction'=>$this->direccion,
+                    'phone'=>$this->telefono,
+                    'created_at'=>now()]); 
+                    
+            DB::Table('administrators')
+            ->insert(['people_id'=>$people_id,
+                    'license'=>$this->carnet,
                     'rda'=>$this->rda,
                     'created_at'=>now()]);
 
             $this->getAlert('success','¡Registro exitoso!');
-
+            $this->dispatchBrowserEvent('closeModal',['modal'=>"modal_new_user"]);
             DB::commit();
+
+            $this->cargo = null;
+            $this->rda = null; 
+            $this->nombres = null;
+            $this->apellido_paterno = null; 
+            $this->apellido_materno = null;
+            $this->carnet = null;
+            $this->fecha_nacimiento = null;
+            $this->sexo = null;
+            $this->direccion = null;
+            $this->telefono = null;
         } catch (\Throwable $th) {
             $this->getAlert('error','¡UPS! Ha ocurrido un problema. Contacte con soporte.');
             DB::rollBack();
