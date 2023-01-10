@@ -15,6 +15,11 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('license')->unique();
+            $table->unsignedBigInteger('tutor_id');
+            $table->foreign('tutor_id')->references('id')->on('tutors')->onDelete('cascade');
+            $table->unsignedBigInteger('people_id');
+            $table->foreign('people_id')->references('id')->on('peoples')->onDelete('cascade');
             $table->timestamps();
         });
     }

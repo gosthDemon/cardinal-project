@@ -12,6 +12,6 @@ class Administrator extends Model
     protected $fillable = ['id','license','people_id','created_at','updated_at'];
 
     public function peoples(){
-        return $this->hasOne(Administrator::class);
+        return $this->belongsTo(People::class,"people_id");
     }
 }

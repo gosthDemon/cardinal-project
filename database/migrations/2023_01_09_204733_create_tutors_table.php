@@ -16,8 +16,8 @@ class CreateTutorsTable extends Migration
         Schema::create('tutors', function (Blueprint $table) {
             $table->id();
             $table->string('license')->unique();
-            $table->unsignedBigInteger('peoples_id');
-            $table->foreign('peoples_id')->references('id')->on('peoples')->onDelete('cascade');
+            $table->unsignedBigInteger('people_id');
+            $table->foreign('people_id')->references('id')->on('peoples')->onDelete('cascade');
             $table->timestamps();
         });
     }

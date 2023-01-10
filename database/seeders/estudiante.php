@@ -24,23 +24,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_1 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_1 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_1,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Uno',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Uno',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_1,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_1,
             'tutor_id'=>1,
-            'carnet' => '12345601',
+            'license' => '12345601',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -54,23 +54,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_2 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_2 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_2,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Dos',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Dos',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_2,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_2,
             'tutor_id'=>2,
-            'carnet' => '12345602',
+            'license' => '12345602',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -85,23 +85,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_3 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_3 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_3,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Tres',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Tres',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_3,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_3,
             'tutor_id'=>1,
-            'carnet' => '12345603',
+            'license' => '12345603',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -116,23 +116,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_4 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_4 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_4,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Cuatro',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Cuatro',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_4,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_4,
             'tutor_id'=>2,
-            'carnet' => '12345604',
+            'license' => '12345604',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -147,23 +147,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_5 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_5 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_5,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Cinco',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Cinco',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_5,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_5,
             'tutor_id'=>1,
-            'carnet' => '12345605',
+            'license' => '12345605',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -177,23 +177,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_6 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_6 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_6,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Seis',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Seis',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_6,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_6,
             'tutor_id'=>2,
-            'carnet' => '12345606',
+            'license' => '12345606',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -208,23 +208,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_7 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_7 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_7,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Siete',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Siete',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_7,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_7,
             'tutor_id'=>2,
-            'carnet' => '12345607',
+            'license' => '12345607',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -239,23 +239,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_8 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_8 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_8,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Ocho',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Ocho',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_8,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_8,
             'tutor_id'=>1,
-            'carnet' => '12345608',
+            'license' => '12345608',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -270,23 +270,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_9 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_9 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_9,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Nueve',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Nueve',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_9,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_9,
             'tutor_id'=>2,
-            'carnet' => '12345609',
+            'license' => '12345609',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -301,23 +301,23 @@ class estudiante extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        $persona_estudiante_id_10 = DB::table('personas')->insertGetId([
+        $people_estudiante_id_10 = DB::table('peoples')->insertGetId([
             'user_id' => $estudiante_id_10,
-            'fotografia' => '',
-            'nombres' => 'Estudiante',
-            'apellido_paterno' => 'Nro',
-            'apellido_materno' => 'Diez',
-            'fecha_nacimiento' => '2000-01-01',
-            'sexo' => 'F',
-            'direccion' => '123 Main Street',
-            'telefono' => '123-456-7890',
+            'picture_profile' => '',
+            'names' => 'Estudiante',
+            'paternal_lastname' => 'Nro',
+            'maternal_lastname' => 'Diez',
+            'birthday' => '2000-01-01',
+            'sex' => 'F',
+            'direction' => '123 Main Street',
+            'phone' => '123-456-7890',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('estudiantes')->insert([
-            'persona_id' => $persona_estudiante_id_10,
+        DB::table('students')->insert([
+            'people_id' => $people_estudiante_id_10,
             'tutor_id' => 3,
-            'carnet' => '12345610',
+            'license' => '12345610',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -42,10 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Role(){
-        return $this->belongsTo(Role::class);
+    public function roles(){
+        return $this->belongsTo(Role::class,'role_id');
     }
-    public function people(){
+    public function peoples(){
         return $this->hasMany(People::class);
     }
 }
